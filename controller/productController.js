@@ -54,7 +54,7 @@ const productController={
         error:error
      })
     },
-    
+
     getOneproduct: async(req, res)=>{
         let id=req.params.id;
         let product;
@@ -62,11 +62,12 @@ const productController={
 
         try{
           product= await Product.findById(id);
+        
         }
         catch(err){error=err}
 
         res.json({
-          reponse: error? 'ERROR':{product},
+          response: error? 'ERROR':{product},
           success:error? false:true,
           error:error
         })
