@@ -45,6 +45,7 @@ import AllReviews from "../../frontend/src/component/Admin/AllReviews";
 import ForgotPassword from "../../frontend/src/component/user/ForgotPassword";
 import ResetPassword from "../../frontend/src/component/user/ResetPassword";
 import Notfound from "../../frontend/src/more/Notfound";
+import Politicas from './component/politicas/Politicas';
 
 function App() {
 
@@ -92,6 +93,8 @@ function App() {
          <Route exact path="/cart" component={Cart} />
          <Route exact path="/favourites" component={Favourites} />
          <Route exact path="/creator" component={CommingSoon} />
+         <Route exact path="/Politicas" component={Politicas} />
+
          <Route exact path="/faq" component={Rules} />
          <Route exact path="/contact" component={Contact} />
          <Route exact path="/more" component={MoreOption} />

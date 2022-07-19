@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className="Footer flex space__around pz__15" style={{"borderTop":".3px solid rgba(21,21,21,0.5)"}}>
+    <div className="Footer flex space__around pz__15" style={{ "borderTop": ".3px solid rgba(21,21,21,0.5)" }}>
       {/* Footer 1st part */}
       <div className="footer1st">
         <img
@@ -73,47 +73,47 @@ const Footer = () => {
         </div>
 
         <div className="app">
-            <h1>Install App</h1>
-            <h6>From App Store or Google Play</h6>
-            <div className="App__Image flex pointer">
-            <Link to="/creator"><img src="http://wp.alithemes.com/html/nest/demo/assets/imgs/theme/app-store.jpg" style={{"width":"150px","margin":"10px"}} /></Link>
-            <Link to="/creator"><img src="http://wp.alithemes.com/html/nest/demo/assets/imgs/theme/google-play.jpg" style={{"width":"150px","margin":"10px"}} /></Link>
-            </div>
+          <h1>Install App</h1>
+          <h6>From App Store or Google Play</h6>
+          <div className="App__Image flex pointer">
+            <Link to="/creator">< img src="http://wp.alithemes.com/html/nest/demo/assets/imgs/theme/app-store.jpg" style={{ "width": "150px", "margin": "10px" }} /></Link>
+            <Link to="/creator">< img src="http://wp.alithemes.com/html/nest/demo/assets/imgs/theme/google-play.jpg" style={{ "width": "150px", "margin": "10px" }} /></Link>
+          </div>
         </div>
       </div>
       {/* Footer 2nd part */}
       <div className="mobile">
         <div className="footer__2nd__part">
-             <h5>Account</h5>
-             <Link to="/login"><h3>Log In</h3></Link>
-             <Link to="/login"><h3>Sign In</h3></Link>
-             <Link to="/login"><h3>Registration</h3></Link>
-             <Link to="/password/forgot"><h3>Forgot Password</h3></Link>
+          <h5>Account</h5>
+          <Link to="/login"><h3>Log In</h3></Link>
+          <Link to="/login"><h3>Sign In</h3></Link>
+          <Link to="/login"><h3>Registration</h3></Link>
+          <Link to="/password/forgot"><h3>Forgot Password</h3></Link>
         </div>
         {/* Footer 3rd part */}
         <div className="footer__2nd__part">
-             <h5>Follow us</h5>
-             <Link to="/facebook.com"><h3>Facebook</h3></Link>
-             <Link to="/youtube.com"><h3>Youtube</h3></Link>
-             <Link to="/instagram.com"><h3>Instagram</h3></Link>
+          <h5>Follow us</h5>
+          <Link to="/facebook.com"><h3>Facebook</h3></Link>
+          <Link to="/youtube.com"><h3>Youtube</h3></Link>
+          <Link to="/instagram.com"><h3>Instagram</h3></Link>
         </div>
-      {/* Footer 4th part */}
-       <div className="footer__3rd__part">
-            <h5>Buiseness</h5>
-             <Link to="/creator"><h3>Create A Seller Account</h3></Link>
-             <Link to="/creator"><h3>Seller Rules</h3></Link>
-             <Link to="/Products"><h3>View Shop</h3></Link>
-             <Link to="/support"><h3>Report us</h3></Link>
-       </div>
-      {/* Footer 5th part */}
-      <div className="footer__4th__part">
-      <h5>Rules</h5>
-      <Link to="/faq"><h3>FAQ</h3></Link>
-      <Link to="/contact"><h3>contact us</h3></Link>
-      <Link to="/about"><h3>About us</h3></Link>
-      <Link to="/creator"><h3>Live Chat</h3></Link>
+        {/* Footer 4th part */}
+        <div className="footer__3rd__part">
+          <h5>Buiseness</h5>
+          <Link to="/creator"><h3>Create A Seller Account</h3></Link>
+          <Link to="/Politicas"><h3>Política de Privacidad</h3></Link>
+          <Link to="/Products"><h3>View Shop</h3></Link>
+          <Link to="/support"><h3>Report us</h3></Link>
         </div>
+        {/* Footer 5th part */}
+        <div className="footer__4th__part">
+          <h5>Rules</h5>
+          <Link to="/faq"><h3>FAQ</h3></Link>
+          <Link to="/contact"><h3>contact us</h3></Link>
+          <Link to="/about"><h3>About us</h3></Link>
+          <Link to="/creator"><h3>Live Chat</h3></Link>
         </div>
+      </div>
     </div>
   );
 };
