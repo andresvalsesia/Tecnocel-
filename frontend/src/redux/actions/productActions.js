@@ -31,26 +31,28 @@ const productActions= {
 
     },
 
-    removerCarrito:()=>{
+    removerCarrito:(id)=>{
 
         return async(dispatch,getState)=>{
+           
+            dispatch({type:'QUITAR_CARRITO',payload:id})
          
         }
 
     },
-    removerTodoCarrito:()=>{
+    removerTodoCarrito:(id)=>{
 
         return async(dispatch,getState)=>{
-            const res= await axios.get(`${apiUrl}product/${id}`);
-            dispatch({type:'QUITAR_TODO_CARRITO',payload: res.data.response.product})
+             
+            dispatch({type:'QUITAR_TODO_CARRITO',payload:id})
+           
         }
 
     },
 
     limpiarCarrito:()=>{
         return async(dispatch,getState)=>{
-            const res= await axios.get(`${apiUrl}product/${id}`);
-            dispatch({type:'LIMPIAR_CARRITO',payload: res.data.response.product})
+            dispatch({type:'LIMPIAR_CARRITO'})
         }
 
     }

@@ -21,18 +21,48 @@ const productReducer = (state=initialState,action)=>{
                 }
 
          case 'AGREGAR_CARRITO':
-
+           
             let itemCarrito=state.carrito.find(item=>item._id===action.payload._id)
-            
+           
             return itemCarrito ? 
             { ...state,
                 carrito:state.carrito.map(item=>item._id===action.payload._id?{...item,__v:item.__v+1}:item )
             }       
-            
+           
              : { ...state,
                         carrito:[...state.carrito,{...action.payload,__v:1}]
-               }     
+               }    
+          
+
+          case 'QUITAR_CARRITO':                                         
+               let itemABorrar=state.carrito.find(item=>item._id===action.payload)
+            
+               return itemABorrar.__v>1 ? {
+                 ...state,
+                 carrito: state.carrito.map(item=>item._id===action.payload?{...item,__v:item.__v-1}:item )
+                } 
+                : {
+                    ...state,
+                    carrito:state.carrito.filter(item=>item._id!==action.payload)
+                }
+
               
+          case 'QUITAR_TODO_CARRITO':
+         
+               return{
+                ...state,
+                carrito:state.carrito.filter(item=>item._id!==action.payload)
+                
+               }  
+          
+          case 'LIMPIAR_CARRITO':
+
+         
+                 return {
+                    ...state,
+                    carrito:[]
+                 }
+
                 default:
                     return state;
         }

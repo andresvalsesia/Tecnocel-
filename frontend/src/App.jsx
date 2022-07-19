@@ -5,30 +5,62 @@ import { useSelector,useDispatch } from 'react-redux';
 import productActions from './redux/actions/productActions';
 
 
+const storage = JSON.parse(localStorage.getItem('carrito'))
 
 function App() {
+
   const [reload,setReload]=useState(false)
   const dispatch=useDispatch();
+
+
   useEffect(() => {
    
      dispatch(productActions.getAllProducts())
+     localStorage.setItem('carrito',JSON.stringify(carrito))
+     
+    
 
   }, [reload]);
 
  let products=useSelector(store=>store.productReducer.products)
  let carrito=useSelector(store=>store.productReducer.carrito)
+ 
 
- console.log(products)
- console.log(carrito)
+ 
+ if (storage) {
+   carrito = storage;
+ } 
 
- const addToCart = (id) =>{
+
+
+
+ const addToCart = async (id) =>{
   
-  dispatch(productActions.agregarCarrito(id))
+  await dispatch(productActions.agregarCarrito(id))
   setReload(!reload)
+ 
  };
 
- const removeToCart = () =>{};
- const clearCart = () =>{};
+ const removeToCart = async (id,all=false) =>{
+
+   if(all){
+
+      await dispatch(productActions.removerTodoCarrito(id))
+      setReload(!reload)
+
+   } else{
+      await dispatch(productActions.removerCarrito(id))
+      setReload(!reload)
+   }
+ 
+ };   
+
+ const clearCart = async () =>{
+
+     await dispatch(productActions.limpiarCarrito())
+     setReload(!reload)
+      
+ };
 
 
   return (
@@ -63,8 +95,8 @@ function App() {
           <h3>{item.name}</h3>
           <h5>USD {item.price*item.__v}</h5>
           <h6>Cantidad: {item.__v}</h6>  
-          <button>Eliminar uno</button>
-          <button>Eliminar todos</button>
+          <button onClick={()=>removeToCart(item._id)}>Eliminar uno</button>
+          <button onClick={()=>removeToCart(item._id,true)}>Eliminar todos</button>
          </div> ) }
 
        </article>
