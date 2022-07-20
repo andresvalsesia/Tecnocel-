@@ -14,7 +14,7 @@ Router.route("/alluser")
 
 //Users
 Router.route('/auth/register')
-    .post(validator,signUpUsers)
+    .post(signUpUsers)
 
 Router.route('/auth/login')
     .post(signInUsers)

@@ -8,7 +8,7 @@ const userController ={
 
            signUpUsers: async(req, res)=>{
 
-             let {name,surname,email,password,photoUser,country,from}=req.body.userData
+             let {name,email,password,from}=req.body.userData
             
            
              try{
@@ -37,24 +37,21 @@ const userController ={
 
                 const newUser= await new User ({
                     name:name,
-                    surname:surname,
                     email:email,
                     password:[passwordHash],
-                    photoUser:photoUser,
-                    country:country,
                     from:[from],
                     uniqueString:uniqueString,
                     verification: verification
 
                 })      
-                  if(from!=='form-signup'){
+                  if(from!=='signup'){
                      newUser.verification=true;
                      await newUser.save()
                      res.json({success:true,from:'signup',message:`Congratulations you have created your user with  ${from}`})
                   } 
                   else{
                      await newUser.save()
-                     await sendEmail(email,uniqueString)
+                     await sendEmail(email,uniqueString) 
                      res.json({success:true,from:'signup',message:'We have sent you an email to validate it, please check your email box'})
                   }    
                }
@@ -88,10 +85,7 @@ const userController ={
                       const userData={
                         id: user._id,
                         name: user.name,
-                        surname:user.surname,
                         email:user.email,
-                        photoUser: user.photoUser,
-                        country: user.country,
                         from:user.from 
                       } 
                       
@@ -101,7 +95,7 @@ const userController ={
                         success:true,
                         from:from,
                         response:{token,userData},
-                        message: `Welcome again ${userData.name} ${userData.surname} `
+                        message: `Welcome again ${userData.name} `
                       })
                          
                      }
@@ -120,10 +114,7 @@ const userController ={
                       const userData={
                         id: user._id,
                         name: user.name,
-                        surname:user.surname,
                         email:user.email,
-                        photoUser: user.photoUser,
-                        country: user.country,
                         from:user.from 
                        } 
                       
@@ -133,7 +124,7 @@ const userController ={
                          success:true,
                          from:from,
                          response:{token,userData},
-                         message: `Welcome again ${userData.name} ${userData.surname}`
+                         message: `Welcome again ${userData.name}`
                        })
                        
                      } 
@@ -171,7 +162,7 @@ const userController ={
             if(user){
                user.verification=true
                await user.save()
-               res.redirect("https://mytinerary-valsesia.herokuapp.com/index")
+               res.redirect(`http://localhost:3000/`)
             }
             else{
                res.json({success:false,message:'Email has not been confirmed yet!'})
@@ -185,13 +176,10 @@ const userController ={
                      const userData={
                         id: req.user.id,
                         name: req.user.name,
-                        surname:req.user.surname,
                         email:req.user.email,
-                        photoUser: req.user.photoUser,
-                        country: req.user.country,
                         from:req.user.from 
                        } 
-                    res.json({success:true, message:`Welcome again ${req.user.name} ${req.user.surname}`,from:'Tolen',response:{userData}}) 
+                    res.json({success:true, message:`Welcome again ${req.user.name}`,from:'Token',response:{userData}}) 
                        
                     }
 
