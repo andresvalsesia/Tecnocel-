@@ -9,6 +9,7 @@ const Footer = () => {
         <img
           src="http://wp.alithemes.com/html/nest/demo/assets/imgs/theme/logo.svg"
           style={{ cursor: "pointer" }}
+          alt="logo"
         />
         <div className="location flex py__10">
           <svg
@@ -76,8 +77,8 @@ const Footer = () => {
             <h1>Install App</h1>
             <h6>From App Store or Google Play</h6>
             <div className="App__Image flex pointer">
-            <Link to="/creator"><img src="http://wp.alithemes.com/html/nest/demo/assets/imgs/theme/app-store.jpg" style={{"width":"150px","margin":"10px"}} /></Link>
-            <Link to="/creator"><img src="http://wp.alithemes.com/html/nest/demo/assets/imgs/theme/google-play.jpg" style={{"width":"150px","margin":"10px"}} /></Link>
+            <Link to="/creator"><img src="http://wp.alithemes.com/html/nest/demo/assets/imgs/theme/app-store.jpg" style={{"width":"150px","margin":"10px"}} alt="appstore" /></Link>
+            <Link to="/creator"><img src="http://wp.alithemes.com/html/nest/demo/assets/imgs/theme/google-play.jpg" style={{"width":"150px","margin":"10px"}} alt="playstore" /></Link>
             </div>
         </div>
       </div>
