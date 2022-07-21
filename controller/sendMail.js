@@ -3,6 +3,7 @@ const {google}=require('googleapis');
 const OAuth2=google.auth.OAuth2
 
 
+
 const sendVerification= async (email,string)=>{
      
      const myOAuth2Client=new OAuth2(
@@ -18,7 +19,7 @@ const sendVerification= async (email,string)=>{
       const transporter=nodemailer.createTransport({
          service:"gmail",
          auth:{
-             user:'mytinerary.andres@gmail.com',
+             user:'tecnocelcba.oficial@gmail.com',
              type:"OAuth2",
              clientId:process.env.GOOGLE_CLIENTID,
              clientSecret: process.env.GOOGLE_CLIENTSECRET,
@@ -31,10 +32,10 @@ const sendVerification= async (email,string)=>{
       })
 
       let mailOptions = {
-         from:'mytinerary.andres@gmail.com',
+         from:'tecnocelcba.oficial@gmail.com',
          to:email,
          subject: 'verify account',
-         html: `<a href=https://mytinerary-back-valsesia.herokuapp.com/mytinerary/verify/${string}>CLICK HERE!</a>
+         html: `<a href=http://localhost:4000/api/verify/${string}>CLICK HERE!</a>
          <h3>TO CONFIRM!</h3>`
                           
       }

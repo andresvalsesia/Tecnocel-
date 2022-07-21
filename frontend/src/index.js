@@ -12,7 +12,9 @@ const reduxStore=createStore({reducer:mainReducer});
 
 ReactDOM.render(
   <Provider store={reduxStore}>
+    <BrowserRouter>
     <App />
+    </BrowserRouter>
   </Provider>,
   document.getElementById('root')
 );
