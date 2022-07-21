@@ -1,8 +1,8 @@
-// eslint-disable-next-line
 import React, { useRef } from "react";
 import "./Header.css";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import logoTecnocel from "../../Assets/logos/logoTecnocel.jpg";
 
 const Header = () => {
 const { cartItems } = useSelector((state) => state.cart);
@@ -27,7 +27,7 @@ window.addEventListener("scroll", () =>{
       <div className="logo pxy__10">
         <Link to="/">
           <img
-            src="http://wp.alithemes.com/html/nest/demo/assets/imgs/theme/logo.svg"
+            src={logoTecnocel}
             alt=""
             className="logo"
             style={{
@@ -53,19 +53,18 @@ window.addEventListener("scroll", () =>{
           style={{
             display: "flex",
             alignItems: "center",
-            height: "30px",
+            height: "40px",
             width: "100%",
-            background: "tomato",
+            background: "#88d317",
             overflow: "hidden",
           }}
         >
           <span
             style={{
-              color: "#fff",
+              color: "black",
             }}
           >
-            Welcome to our shop...You can find anything in here as your
-            favourites..
+            ¡Bienvenidos a TecnoCel!
           </span>
         </div>
       </div>
@@ -95,10 +94,12 @@ window.addEventListener("scroll", () =>{
           style={{
             fontFamily: "sans-serif",
             fontSize: "1rem",
+            color:"#6e3667"
           }}
         >
           <strong style={{
-            padding:"0px 5px"
+            padding:"0px 5px",
+            color:"#6e3667"
           }}>Email:</strong> temp123@gmail.com
         </span>
       </div>
@@ -120,25 +121,26 @@ window.addEventListener("scroll", () =>{
             width: "100%",
             alignItems: "center",
             justifyContent: "center",
+            margin: ".5rem",
           }}
         >
           <Link to="/">
-            <li>Home</li>
+            <li className="buttonnav">Home</li>
           </Link>
           <Link to="/about">
-            <li>About</li>
+            <li className="buttonnav" >About</li>
           </Link>
           <Link to="/Products">
-            <li>Products</li>
+            <li className="buttonnav" >Productos</li>
           </Link>
           <Link to="/creator">
-            <li>Become A Seller</li>
+            <li className="buttonnav" >Become A Seller</li>
           </Link>
           <Link to="/faq">
-            <li>Users Rules</li>
+            <li className="buttonnav" >Politicas de privacidad</li>
           </Link>
           <Link to="/contact">
-            <li>Contact</li>
+            <li className="buttonnav" >Contact0</li>
           </Link>
         </ul>
       </div>
@@ -150,7 +152,7 @@ window.addEventListener("scroll", () =>{
               xmlns="http://www.w3.org/2000/svg"
               width="22"
               height="22"
-              fill="currentColor"
+              fill="#6e3667"
               class="bi bi-search pxz__20 black pointer"
               viewBox="0 0 16 16"
             >
@@ -164,7 +166,7 @@ window.addEventListener("scroll", () =>{
               xmlns="http://www.w3.org/2000/svg"
               width="25"
               height="25"
-              fill="currentColor"
+              fill="#6e3667"
               class="bi bi-heart pxz__20 black"
               viewBox="0 0 16 16"
             >
@@ -196,7 +198,7 @@ window.addEventListener("scroll", () =>{
                 xmlns="http://www.w3.org/2000/svg"
                 width="25"
                 height="25"
-                fill="currentColor"
+                fill="#6e3667"
                 class="bi bi-cart3 pxz__20 black"
                 viewBox="0 0 16 16"
               >
@@ -228,7 +230,7 @@ window.addEventListener("scroll", () =>{
               xmlns="http://www.w3.org/2000/svg"
               width="25"
               height="25"
-              fill="currentColor"
+              fill="#6e3667"
               class="bi bi-person pxz__20 black"
               viewBox="0 0 16 16"
             >

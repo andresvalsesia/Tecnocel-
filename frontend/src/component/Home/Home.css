@@ -1,8 +1,13 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 .banner {
-  height: 100vh;
+  height: 85vh !important;
   width: 100%;
   position: relative;
-  background-color: #4cabdb;
+  background-color:#6e3667;
 }
 .bgImg {
   width: 100%;
@@ -110,7 +115,7 @@ img.ProductImg {
   height: 100vh;
   width: 100%;
   position: relative;
-  background-color: #4cabdb;
+  background-color:#6e3667;
 }
 .bgImg {
   width: 100%;
