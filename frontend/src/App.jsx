@@ -6,6 +6,7 @@ import userActions from './redux/actions/userActions';
 import productActions from './redux/actions/productActions';
 import LoginSignUp from '../src/component/login/LoginSignUp';
 import About from '../src/component/about/About';
+import Admin from '../src/component/admin/Admin';
 import './App.css';
 
 const storage = JSON.parse(localStorage.getItem('carrito'))
@@ -110,7 +111,7 @@ function App() {
      <>
       
       <Routes>
-      <Route path="/" element={<About/>}/>
+      <Route path="/" element={<Admin/>}/>
       <Route path="/password/forgot" element={<LoginSignUp/>}/>
 
       </Routes>
