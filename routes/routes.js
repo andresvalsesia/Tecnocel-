@@ -7,7 +7,7 @@ const passport =require('../config/passport');
 
 
 const {signUpUsers,signInUsers,verifyMail,verificarToken,traerUsuarios}=userController;
-const {createProduct,getAllproducts,getOneproduct}=productController;
+const {createProduct,getAllproducts,getOneproduct,deleteProduct}=productController;
 
 Router.route("/alluser")
    .get(traerUsuarios)
@@ -35,6 +35,7 @@ Router.route('/products')
 
 Router.route('/product/:id')
         .get(getOneproduct)
+        .delete(deleteProduct)
 
 
     

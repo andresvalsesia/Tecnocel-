@@ -2,7 +2,7 @@ const initialState={
     products:[],
     oneProduct:{},
     carrito:[]
-   
+ 
 }
 
 const productReducer = (state=initialState,action)=>{
@@ -44,8 +44,7 @@ const productReducer = (state=initialState,action)=>{
                 : {
                     ...state,
                     carrito:state.carrito.filter(item=>item._id!==action.payload)
-                }
-
+                }     
               
           case 'QUITAR_TODO_CARRITO':
          
