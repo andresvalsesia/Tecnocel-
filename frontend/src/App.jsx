@@ -1,9 +1,13 @@
-import './App.css';
-import react,{useState,useEffect} from 'react';
+import React,{useState,useEffect} from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { useSelector,useDispatch } from 'react-redux';
+import { ToastContainer, toast } from 'react-toastify';
+import userActions from './redux/actions/userActions';
 import productActions from './redux/actions/productActions';
-
+import LoginSignUp from '../src/component/login/LoginSignUp';
+import About from '../src/component/about/About';
+import Admin from '../src/component/admin/Admin';
+import './App.css';
 
 const storage = JSON.parse(localStorage.getItem('carrito'))
 
@@ -18,18 +22,58 @@ function App() {
      dispatch(productActions.getAllProducts())
      localStorage.setItem('carrito',JSON.stringify(carrito))
      
+     if (localStorage.getItem('token') !== null) {
+      const token = localStorage.getItem('token');
+      dispatch(userActions.verificarToken(token))
+    }
     
 
   }, [reload]);
 
  let products=useSelector(store=>store.productReducer.products)
  let carrito=useSelector(store=>store.productReducer.carrito)
- 
+ let user = useSelector(store => store.userReducer.user)
+ console.log(user)
 
  
  if (storage) {
    carrito = storage;
  } 
+
+
+ let message = useSelector(store => store.userReducer.snackbar)
+
+ if (message.view) {
+
+   message.success ? toast.success(message.message, {
+     position: "bottom-center",
+     autoClose: 5000,
+     hideProgressBar: false,
+     closeOnClick: true,
+     pauseOnHover: true,
+     draggable: true,
+     progress: undefined,
+   })
+   :
+    
+       toast.warn(message.message, {
+         position: "bottom-center",
+         autoClose: 5000,
+         hideProgressBar: false,
+         closeOnClick: true,
+         pauseOnHover: true,
+         draggable: true,
+         progress: undefined,
+       }) 
+      
+       
+   if(Array.isArray(message.message)){
+      message.message.map((text)=>{toast['error'](text.message)}) 
+   }
+
+    dispatch({ type: 'MESSAGE', payload: { view: false, message: "", success: false } }) 
+ }
+
 
 
 
@@ -65,9 +109,35 @@ function App() {
 
   return (
      <>
+      
+      <Routes>
+      <Route path="/" element={<Admin/>}/>
+      <Route path="/password/forgot" element={<LoginSignUp/>}/>
+
+      </Routes>
      
-    
-       <h1>CARRITO DE COMPRAS</h1>
+      <ToastContainer
+        position="bottom-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
+     
+
+      </>  
+
+  );
+}
+
+export default App;
+
+
+ {/*  <h1>CARRITO DE COMPRAS</h1>
        <h3>productos</h3>
        <article className="box grid-responsive">
         {products && 
@@ -100,11 +170,4 @@ function App() {
          </div> ) }
 
        </article>
-
-
-      </>  
-
-  );
-}
-
-export default App;
+ */}
