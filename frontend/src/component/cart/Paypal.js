@@ -69,7 +69,7 @@ const Paypal = () => {
         onError={onError}
         onCancel={onCancel}
     />
-</PayPalScriptProvider>
+    </PayPalScriptProvider>
   )
 }
 

@@ -30,6 +30,15 @@ const productActions= {
 
     },
 
+    modifyProduct:(id,data)=>{
+
+        return async(dispatch,getState)=>{
+            const res= await axios.put(`${apiUrl}product/${id}`,{data});
+            dispatch({type:'MESSAGE', payload: {view:true,message:res.data.message,success:res.data.success}});
+        }
+        
+    },
+
     deleteProduct:(id)=>{
 
         return async(dispatch,getState)=>{
