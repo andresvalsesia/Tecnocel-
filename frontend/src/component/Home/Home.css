@@ -26,13 +26,7 @@
   flex-direction: column;
   z-index: 10;
 }
-button.Home__button {
-  padding: 15px 20px;
-  background-color: tomato;
-  border: none;
-  cursor: pointer;
-  color: #fff;
-}
+
 .homeHeading {
   text-align: center;
   border-bottom: 1px solid rgba(21, 21, 21, 0.5);
@@ -85,12 +79,7 @@ img.ProductImg {
   color: #000;
   margin-bottom: 0;
 }
-.ProductCard > span {
-  margin: 0.5vmax;
-  color: tomato;
-  font-family: "Frankin Gothic Medium", "Arrial Narrow", Arial, sans-serif;
-  font-size: 1vmax;
-}
+
 .ProductCard:hover {
   box-shadow: 0 0 5px rgba(15, 15, 15, 0.26);
   transform: translateY(-1vmax);
