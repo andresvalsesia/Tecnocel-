@@ -76,7 +76,7 @@ useEffect(() => {
          </form>
    
    
-         <LinkRouter to={`/`}><button className="volver-btn">VOLVER AL PANEL</button></LinkRouter>
+         <LinkRouter to={`/`}><div className="volver-container"><button className="volver-btn">VOLVER AL PANEL</button></div></LinkRouter>
        
       </div>
       
