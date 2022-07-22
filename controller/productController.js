@@ -3,9 +3,9 @@ const Product = require("../model/products");
 const productController={
                    
     createProduct: async (req, res) => {
-      console.log(req)
+      console.log(req.body)
         let product;
-        let {name,description,price,brand,color,sizeTv,RAM,images,category,stock,system,disc,processor} = req.body
+        let {name,description,price,brand,color,sizeTv,RAM,images,category,stock,system,disc,processor} = req.body.data
         let error=null;
         
         try{
@@ -26,16 +26,61 @@ const productController={
                 processor:processor
     
          }).save()
+
+           res.json({success:true,message:"PRODUCTO CREADO EXITOSAMENTE"})
+
         }
         
         catch(err){
-            error=err} 
+
+            error=err
+
+            res.json({
+             
+              success:false,
+              message:"Ocurrio un problema intente nuevamente",
+            });
+          
+          } 
         
-       res.json({
-         response: error? 'ERROR':{product},
-         success: error ? false : true,
-         error:error
-       });
+     
+     },
+
+     modifyProduct: async(req, res)=>{
+        let id=req.params.id;
+        let product=req.body.data
+        let productdb;
+     console.log(id)
+           try{
+             productdb=await Product.findOneAndUpdate({_id:id},product,{new:true});
+             res.json({success:true,message:"PRODUCTO MODIFICADO EXITOSAMENTE"})
+           }
+          catch(err){
+         console.log(err)
+            res.json({
+            
+              success:false,
+              message:"Ocurrio un problema intente nuevamente",
+            });
+          
+          }
+
+     },
+
+     deleteProduct: async (req,res) => {
+      let id=req.params.id
+      let product;
+      try{
+         product= await Product.findOneAndDelete({_id:id});
+        
+         res.json({success:true,message:"PRODUCTO ELIMINADO EXITOSAMENTE"})
+
+      }
+      catch{
+        res.json({success:false,
+          message:"Ocurrio un problema intente nuevamente",})
+      }  
+
      },
 
      getAllproducts: async(req,res)=>{

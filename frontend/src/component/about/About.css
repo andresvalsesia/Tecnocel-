@@ -14,7 +14,7 @@
 }
 .meta p{
     color: #7E7E7E;
-    font-size: 1rem;
+    font-size: 1.5rem;
     line-height: 1.5;
     margin-bottom: 25px;
 }
@@ -71,7 +71,7 @@
 }
 .col__3 > div > p{
     color: #7E7E7E;
-    font-size: 1rem;
+    font-size: 1.3rem;
     line-height: 1.5;
     text-align: center;
     padding: 15px 0;

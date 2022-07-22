@@ -1,0 +1,347 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+:root{
+   --green:#88d317c7;
+   --black:rgba(51, 51, 51, 0.446);
+   --white:#fff;
+   --bg-color:#eee;
+   --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+   --border:.1rem solid var(--black);
+}
+
+*{
+   font-family: 'Poppins', sans-serif;
+   margin:0; padding:0;
+   box-sizing: border-box;
+   outline: none; border:none;
+   text-decoration: none;
+   text-transform: capitalize;
+}
+
+html{
+   font-size: 62.5%;
+   overflow-x: hidden;
+}
+
+.btn{
+   display: block;
+   width: 100%;
+   text-align: center;
+   cursor: pointer;
+   border-radius: .5rem;
+   margin-top: 1rem;
+   font-size: 1.7rem;
+   padding:1rem 3rem;
+   background: var(--green);
+   color:var(--white);
+   text-align: center;
+   display: flex;
+ 
+}
+.btn-edit{
+   background-color: #00b347!important;
+  
+}
+
+.btn:hover{
+   background: var(--black);
+}
+#btn-agregar{
+   display: block;
+   width: 100%;
+   cursor: pointer;
+   border-radius: .5rem;
+   margin-top: 1rem;
+   font-size: 1.7rem;
+   padding:1rem 3rem;
+   background: var(--green);
+   color:var(--white);
+   text-align: center;
+}
+
+#btn-agregar:hover{
+   background: var(--black);
+}
+
+.message{
+   display: block;
+   background: var(--bg-color);
+   padding:1.5rem 1rem;
+   font-size: 2rem;
+   color:var(--black);
+   margin-bottom: 2rem;
+   text-align: center;
+}
+main, .container-all {
+   width: 100%;
+   background-image: url(https://static.vecteezy.com/system/resources/previews/002/211/673/original/black-and-green-abstract-background-with-polygonal-pattern-template-for-your-banner-and-presentation-modern-design-illustration-vector.jpg);
+
+ 
+}
+.fromulario {
+   background-color: rgba(0, 0, 0, 0) !important;
+   color: white !important;
+}
+ h3{
+   color: white !important;  
+   border-bottom: #88D317 solid 2px;
+}
+
+
+.container{
+   max-width: 1200px;
+   padding:2rem;
+   margin:0 auto;
+   color: white;
+   -moz-box-shadow: 0 0 6px #88D317;
+   -webkit-box-shadow: 0 0 6px #88D317;
+   box-shadow: 0 0 30px #88D317;
+   background-color: rgba(0, 0, 0, 0.745);
+}
+
+
+thead, tr{
+   background-color: rgba(0, 0, 0, 0.634);
+   -moz-box-shadow: 0 0 6px #88D317;
+   -webkit-box-shadow: 0 0 6px #88D317;
+   box-shadow: 0 0 20px #88D317;
+}
+
+
+.admin-product-form-container.centered{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   min-height: 100vh;
+   
+}
+
+.admin-product-form-container form{
+   max-width: 50rem;
+   margin:0 auto;
+   padding:2rem;
+   border-radius: .5rem;
+   background: var(--bg-color);
+}
+
+.admin-product-form-container form h3{
+   text-transform: uppercase;
+   color:var(--black);
+   margin-bottom: 1rem;
+   text-align: center;
+   font-size: 2.5rem;
+}
+
+.admin-product-form-container form .box{
+   width: 100%;
+   border-radius: .5rem;
+   padding:1.2rem 1.5rem;
+   font-size: 1.7rem;
+   margin:1rem 0;
+   background: var(--white);
+   text-transform: none;
+}
+
+.product-display{
+   margin:2rem 0;
+}
+
+.product-display .product-display-table{
+   width: 100%;
+   text-align: center;
+}
+
+.product-display .product-display-table thead{
+   background: var(--bg-color);
+}
+
+.product-display .product-display-table th{
+   padding:1rem;
+   font-size: 2rem;
+}
+
+
+.product-display .product-display-table td{
+   padding:1rem;
+   font-size: 2rem;
+   border-bottom: var(--border);
+}
+
+.product-display .product-display-table .btn:first-child{
+   margin-top: 0;
+}
+
+.product-display .product-display-table .btn:last-child{
+   background: crimson;
+}
+
+.product-display .product-display-table .btn:last-child:hover{
+   background: var(--black);
+}
+
+.img-product{
+    height:150px;
+    width:200px;
+    object-fit: cover;
+    border: solid  rgba(0, 70, 248, 0.816) 2px;
+    border-radius: 5%;
+    -moz-box-shadow: 0 0 6px #88D317;
+    -webkit-box-shadow: 0 0 6px #88D317;
+    box-shadow: 0 0 30px blue;
+}
+
+
+
+
+
+
+
+@media (max-width:991px){
+
+   html{
+      font-size: 55%;
+   }
+   button, .btn{
+      width: 130px;
+      font-size: 20px;
+      height: 40px;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      margin: 5px;
+
+   }
+
+}
+
+@media (max-width:768px){
+
+   .product-display{
+      overflow-y:scroll;
+   }
+
+   .product-display .product-display-table{
+      width: 80rem;
+   }
+
+}
+@media (max-width:768px){
+
+   .product-display{
+      overflow-y:scroll;
+   }
+
+   .product-display .product-display-table{
+      width: 100%;
+   }
+   button, .btn{
+      width: 110px;
+      font-size: 18px;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      margin: 5px;
+
+   }
+
+}
+@media (max-width:625px){
+
+   .product-display{
+      overflow-y:scroll;
+   }
+
+   .product-display .product-display-table{
+      width: 100%;
+   }
+   .img-product{
+      width: 120px;
+      height: 100px;
+   }
+  tr, td, .name-product {
+      font-size: 10px !important;
+   }
+   button, .btn{
+      width: 100px;
+      font-size: 15px;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      height: 30px;
+      margin: 5px;
+   }
+
+}
+
+@media (max-width:450px){
+
+   html{
+      font-size: 50%;
+   }
+   .product-display{
+      overflow-y:scroll;
+   }
+
+   .product-display .product-display-table{
+      width: 100%;
+   }
+   .img-product{
+      width: 90px;
+      height: 70px;
+   }
+  tr, td, .name-product {
+      font-size: 10px !important;
+   }
+   button, .btn{
+      width: 70px;
+      font-size: 10px;
+      margin: 0;
+      padding: 0;
+      display: flex;
+
+   }
+   .fromulario{
+      width: 100% !important;
+   }
+   button, .btn{
+      width: 80px;
+      font-size: 10px;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      height: 20px;
+      margin: 5px;
+
+   }
+
+}
+@media (max-width:375px){
+
+   html{
+      font-size: 50%;
+   }
+   .product-display{
+      overflow-y:scroll;
+   }
+
+   .product-display .product-display-table{
+      width: 100%;
+   }
+   .img-product{
+      width: 70px;
+      height: 50px;
+   }
+  tr, td, .name-product {
+      font-size: 7px !important;
+   }
+   button, .btn{
+      width: 70px;
+      font-size: 10px;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      margin: 3px;
+
+   }
+
+}

@@ -5,6 +5,11 @@ import { ToastContainer, toast } from 'react-toastify';
 import userActions from './redux/actions/userActions';
 import productActions from './redux/actions/productActions';
 import LoginSignUp from '../src/component/login/LoginSignUp';
+import EditarProduct from './component/admin/EditarProduct';
+import Cart from '../src/component/cart/Cart';
+import About from '../src/component/about/About';
+import Admin from '../src/component/admin/Admin';
+import Contact from '../src/component/contact/Contact';
 import './App.css';
 
 const storage = JSON.parse(localStorage.getItem('carrito'))
@@ -31,7 +36,7 @@ function App() {
  let products=useSelector(store=>store.productReducer.products)
  let carrito=useSelector(store=>store.productReducer.carrito)
  let user = useSelector(store => store.userReducer.user)
- console.log(user)
+
 
  
  if (storage) {
@@ -70,7 +75,7 @@ function App() {
    }
 
     dispatch({ type: 'MESSAGE', payload: { view: false, message: "", success: false } }) 
- }
+ } 
 
 
 
@@ -109,9 +114,11 @@ function App() {
      <>
       
       <Routes>
-      <Route path="/" element={<LoginSignUp/>}/>
-      <Route path="/password/forgot" element={<LoginSignUp/>}/>
-
+      <Route path="/" element={<Contact/>}/>
+      {/* <Route path="/cart" element={<Cart/>}/> */}
+      <Route path="/login" element={<LoginSignUp/>}/>
+      <Route path="/about" element={<About/>}/>
+      <Route path="/product/:id" element={<EditarProduct/>}/>
       </Routes>
      
       <ToastContainer
