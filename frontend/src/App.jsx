@@ -6,6 +6,7 @@ import userActions from './redux/actions/userActions';
 import productActions from './redux/actions/productActions';
 import LoginSignUp from '../src/component/login/LoginSignUp';
 import EditarProduct from './component/admin/EditarProduct';
+import Cart from '../src/component/cart/Cart';
 import About from '../src/component/about/About';
 import Admin from '../src/component/admin/Admin';
 import './App.css';
@@ -34,7 +35,7 @@ function App() {
  let products=useSelector(store=>store.productReducer.products)
  let carrito=useSelector(store=>store.productReducer.carrito)
  let user = useSelector(store => store.userReducer.user)
- console.log(user)
+
 
  
  if (storage) {
@@ -112,7 +113,8 @@ function App() {
      <>
       
       <Routes>
-      <Route path="/panel" element={<Admin/>}/>
+      <Route path="/" element={<Cart/>}/>
+      {/* <Route path="/cart" element={<Cart/>}/> */}
       <Route path="/login" element={<LoginSignUp/>}/>
       <Route path="/about" element={<About/>}/>
       <Route path="/product/:id" element={<EditarProduct/>}/>

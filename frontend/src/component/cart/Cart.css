@@ -1,0 +1,233 @@
+.logo-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 20rem;
+    border-bottom: solid 1px grey;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    width: 100%;
+    margin-bottom: 40px;
+  }
+  
+  .productos {
+    display: grid;
+    grid-template-columns: 4fr 0.9fr 0.5fr 0.7fr 0.2fr;
+    gap: 2rem;
+    padding: 1rem 0 1rem 0;
+    border-bottom: 1px solid #88D317;
+   
+  }
+  
+  .productos :last-child {
+    border-bottom: none;
+  }
+  
+  .link-inicio {
+    color: #88D317;
+    font-family: sans-serif;
+  }
+  
+  .box-productos :last-child {
+    border-bottom: none;
+  }
+  
+  .productos p {
+    color: white;
+  }
+  
+  .productos h5 {
+    color: white;
+    font-size: 16px;
+    padding: 0;
+    margin-top: 0.1rem;
+  }
+  
+  .button-compra {
+      background:linear-gradient(to bottom, #88d317 5%, #5cbf2a 100%);
+      background-color:#88d317;
+      border-radius:10px;
+      border:1px solid #88d317;
+      display:inline-block;
+      cursor:pointer;
+      color:#ffffff;
+      font-family:Arial;
+      font-size:19px;
+      font-weight:bold;
+      padding:16px 31px;
+      text-decoration:none;
+      text-shadow:0px 1px 0px #2f6627;
+  }
+  .button-compra:hover {
+      background:linear-gradient(to bottom, #5cbf2a 5%, #88d317 100%);
+      background-color:#5cbf2a;
+  }
+  .button-compra:active {
+      position:relative;
+      top:1px;
+  }
+  
+  
+  .productos h3 {
+    color: white;
+    font-size: 12px;
+  }
+  
+  .logo-linkdiv {
+    display: flex;
+    align-items: center;
+  }
+  
+  .contenedor {
+    background-image: url(https://besthqwallpapers.com/Uploads/20-8-2019/102143/thumb2-black-stylish-background-green-neon-lines-green-light-effects-abstract-black-background.jpg);
+    padding: 0 10rem;
+    height: 100vh;
+    width:100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .text-envios-gratis {
+    color: white;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+  
+  .titulo-productos {
+    display: grid;
+    grid-template-columns: 4fr 0.9fr 0.5fr 0.7fr 0.2fr;
+    color: white;
+    font-weight: bold;
+    gap: 2rem;  
+  }
+  
+  .img-texto {
+    display: flex;
+  }
+  
+  .boxes {
+
+    margin-top: 3rem;
+    display: flex;
+    gap: 5rem;
+    justify-content: center;
+  }
+  
+  .box-resumen {
+    -moz-box-shadow: 0 0 6px   #88D317;
+    -webkit-box-shadow: 0 0 6px   #88D317;
+    box-shadow: 0 0 30px #88D317;
+    padding: 2rem;
+    height: fit-content;
+    background-color: #101010;
+  }
+  
+  .box-resumen h4 {
+    color: white;
+    font-weight: bold;
+    border-bottom: 1px grey solid;
+    width: 13rem;
+    text-align: center;
+    padding-bottom: 1rem;
+  }
+  
+  .box-productos {
+    -moz-box-shadow: 0 0 6px   #88D317;
+    -webkit-box-shadow: 0 0 6px   #88D317;
+    box-shadow: 0 0 30px #88D317;
+    padding: 5rem;
+    max-width: 1152px;
+    background-color: #101010;
+  }
+  
+  .cantidad {
+    display: flex;
+    gap: .7rem;
+  }
+  
+  .cantidad p {
+    margin-top: 0.1rem;
+  }
+  
+  .vaciar-carrito {
+    color: white;
+    font-weight: bold;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+    align-items: center;
+    gap: .5rem;
+  }
+  
+  .total-link {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .total-link p {
+    margin-top: 2rem;
+    color: white;
+  }
+  
+  
+  
+  @media (max-width: 1300px) {
+    .boxes {
+      flex-direction: column;
+      padding-bottom: 3rem;
+    }
+    .contenedor {
+      height: fit-content;
+    }
+    .box-resumen h4 {
+      width: 100%;
+    }
+    .button-compra {
+      text-align: center;
+    }
+    .total-link {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+    .total-link p {
+      text-align: center;
+    }
+  }
+  
+  @media (max-width: 1000px) {
+    .contenedor {
+      padding: 2rem;
+    }
+  
+  @media (max-width: 700px) {
+    .contenedor {
+      padding: 1rem;
+    }
+    .titulo-productos {
+      display: none;
+    }
+    .productos {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .productos h5 {
+      display: none;
+    }
+    .productos h3 {
+      width: 4rem;
+    }
+    .logo-link {
+      gap: 2rem;
+    }
+  }
+  @media (max-width: 540px) {
+    .tacho :last-child {
+      justify-content: end;
+    }
+  }
+}

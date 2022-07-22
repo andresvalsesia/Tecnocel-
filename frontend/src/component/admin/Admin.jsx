@@ -55,11 +55,12 @@ useEffect(() => {
 
 
   return (
+   <div className='container-all'>
     <div className="container">
       
       <div className="admin-product-form-container">
          
-         <form onSubmit={createProduct}>
+         <form className='fromulario' onSubmit={createProduct}>
             <h3>Agregar producto</h3>
             <input type="text" placeholder="Ingrese el nombre del producto" name="producto_nombre" className="box" required />
             <input type="text" placeholder="Ingrese la descripcion del producto" name="producto_descrep" className="box" required />
@@ -96,7 +97,7 @@ useEffect(() => {
             <td>{product.name}</td>
             <td>USD {product.price}</td>
             <td colspan="2">
-              <LinkRouter to={`/product/${product._id}`}><button className="btn"><BorderColorIcon sx={{fontSize:'2rem',marginRight:'5px'}} /> EDITAR</button></LinkRouter>
+              <LinkRouter to={`/product/${product._id}`}><button className="btn btn-edit"><BorderColorIcon sx={{fontSize:'2rem',marginRight:'5px'}} /> EDITAR</button></LinkRouter>
                 <button onClick={()=>deleteProduct(product._id)}  className="btn"><DeleteIcon sx={{fontSize:'2rem',marginRight:'5px'}} /> ELIMINAR</button>
             </td>
             </tr>)}     
@@ -106,6 +107,7 @@ useEffect(() => {
       </div>
 
     </div>
+    </div> 
   )
 }
 
