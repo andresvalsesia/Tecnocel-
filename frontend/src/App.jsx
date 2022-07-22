@@ -7,6 +7,7 @@ import productActions from './redux/actions/productActions';
 import LoginSignUp from '../src/component/login/LoginSignUp';
 import EditarProduct from './component/admin/EditarProduct';
 import Cart from '../src/component/cart/Cart';
+import Footer from '../../frontend/src/Footer';
 import About from '../src/component/about/About';
 import Admin from '../src/component/admin/Admin';
 import Contact from '../src/component/contact/Contact';
@@ -120,7 +121,9 @@ function App() {
       <Route path="/about" element={<About/>}/>
       <Route path="/product/:id" element={<EditarProduct/>}/>
       </Routes>
-     
+      
+      <Footer/>
+
       <ToastContainer
         position="bottom-center"
         autoClose={5000}

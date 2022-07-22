@@ -1,7 +1,7 @@
 
 import React from "react";
 import MetaData from "../more/Metadata";
-import BottomTab from "./BottomTab";
+
 import "./contact.css"
 
 const Contact = () => {
