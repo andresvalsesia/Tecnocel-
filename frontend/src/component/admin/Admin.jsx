@@ -19,16 +19,17 @@ useEffect(() => {
  let products=useSelector(store=>store.productReducer.products)
 
   return (
+   <main className='container-all'>
     <div className="container">
-      
+
       <div className="admin-product-form-container">
          
-         <form action="">
+         <form className='fromulario' action="">
             <h3>Agregar producto</h3>
             <input type="text" placeholder="Ingrese el nombre del producto" name="producto_nombre" className="box" />
             <input type="number" placeholder="Ingrese el precio del producto" name="producto_precio" className="box" />
             <input type="file" accept="image/png, image/jpeg, image/jpg"  name="producto_image" className="box" />
-            <input type="submit" class="btn" name="add_product" value="Agregar" />
+            <input type="submit" id="btn-agregar" name="add_product" value="Agregar" />
          </form>
 
       </div>
@@ -45,7 +46,7 @@ useEffect(() => {
          </thead>
     {products && products.map(product =><tr>
             <td><img src={product.images} alt="img" className="img-product"/></td>
-            <td>{product.name}</td>
+            <td className='name-product'>{product.name}</td>
             <td>USD {product.price}</td>
             <td colspan="2">
                 <button className="btn"><BorderColorIcon sx={{fontSize:'2rem',marginRight:'5px'}} /> EDITAR</button>
@@ -58,6 +59,7 @@ useEffect(() => {
       </div>
 
     </div>
+    </main>
   )
 }
 
