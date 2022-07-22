@@ -7,11 +7,15 @@ import productActions from './redux/actions/productActions';
 import LoginSignUp from '../src/component/login/LoginSignUp';
 import EditarProduct from './component/admin/EditarProduct';
 import Cart from '../src/component/cart/Cart';
+import Header from '../src/component/home/Header';
 import Footer from '../../frontend/src/Footer';
 import About from '../src/component/about/About';
 import Admin from '../src/component/admin/Admin';
 import Contact from '../src/component/contact/Contact';
+import Home from '../src/component/home/Home';
+import Products from '../src/component/Products/Products';
 import './App.css';
+import ProductDetails from './component/Products/ProductDetails';
 
 const storage = JSON.parse(localStorage.getItem('carrito'))
 
@@ -113,13 +117,14 @@ function App() {
 
   return (
      <>
-      
+      <Header/>
       <Routes>
-      <Route path="/" element={<Contact/>}/>
+      <Route path="/" element={<Products/>}/>
       {/* <Route path="/cart" element={<Cart/>}/> */}
       <Route path="/login" element={<LoginSignUp/>}/>
       <Route path="/about" element={<About/>}/>
       <Route path="/product/:id" element={<EditarProduct/>}/>
+      <Route path="/productDetails/:id" element={<ProductDetails/>}/>
       </Routes>
       
       <Footer/>
