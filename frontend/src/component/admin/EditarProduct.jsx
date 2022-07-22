@@ -50,11 +50,12 @@ useEffect(() => {
 
 
   return (
+   <div className="container-all">
     <div className="container">
       
       <div className="admin-product-form-container">
          
-         <form onSubmit={modifiProduct}>
+         <form className="formulario" onSubmit={modifiProduct}>
             <h3>Editar producto</h3>
             <input type="text" value={product.name} placeholder="Ingrese el nombre del producto" name="producto_nombre" className="box" required />
             <input type="text"  placeholder="Ingrese la descripcion del producto" name="producto_descrep" className="box" required />
@@ -71,16 +72,17 @@ useEffect(() => {
  
             <input  type="text" placeholder="Ingrese la imagen del producto" name="producto_imagen" className="box" required />
             {/* <input type="file" accept="image/png, image/jpeg, image/jpg"  name="producto_image" className="box" /> */}
-            <input type="submit" className="btn" name="add_product" value="Editar" />
+            <input id="agregar-btn" type="submit" className="btn" name="add_product" value="Editar" />
          </form>
    
    
-         <LinkRouter to={`/`}><button className="btn">VOLVER AL PANEL</button></LinkRouter>
+         <LinkRouter to={`/`}><button className="volver-btn">VOLVER AL PANEL</button></LinkRouter>
        
       </div>
       
    
 
+    </div>
     </div>
   )
 }

@@ -53,8 +53,10 @@ const productActions= {
         return async(dispatch,getState)=>{
             const res= await axios.get(`${apiUrl}product/${id}`);
             dispatch({type:'AGREGAR_CARRITO',payload: res.data.response.product})
-        }
+            dispatch({type:'MESSAGE', payload: {view:true,message:'PRUDUCTO AGREGADO AL CARRITO',success:true}})
 
+        }
+          
     },
 
     removerCarrito:(id)=>{
@@ -62,6 +64,7 @@ const productActions= {
         return async(dispatch,getState)=>{
            
             dispatch({type:'QUITAR_CARRITO',payload:id})
+            
          
         }
 
@@ -71,7 +74,7 @@ const productActions= {
         return async(dispatch,getState)=>{
              
             dispatch({type:'QUITAR_TODO_CARRITO',payload:id})
-           
+            dispatch({type:'MESSAGE', payload: {view:true,message:'PRUDUCTO REMOVIDO DEL CARRITO',success:true}})
         }
 
     },

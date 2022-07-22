@@ -5,7 +5,9 @@ import { ToastContainer, toast } from 'react-toastify';
 import userActions from './redux/actions/userActions';
 import productActions from './redux/actions/productActions';
 import LoginSignUp from '../src/component/login/LoginSignUp';
+import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import EditarProduct from './component/admin/EditarProduct';
+import ScrollToTop from 'react-scroll-to-top';
 import Cart from '../src/component/cart/Cart';
 import Header from '../src/component/home/Header';
 import Footer from '../../frontend/src/Footer';
@@ -35,6 +37,9 @@ function App() {
       dispatch(userActions.verificarToken(token))
     }
     
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 500);
 
   }, [reload]);
 
@@ -119,7 +124,7 @@ function App() {
      <>
       <Header/>
       <Routes>
-      <Route path="/" element={<Products/>}/>
+      <Route path="/" element={<Admin/>}/>
       {/* <Route path="/cart" element={<Cart/>}/> */}
       <Route path="/login" element={<LoginSignUp/>}/>
       <Route path="/about" element={<About/>}/>
@@ -128,7 +133,11 @@ function App() {
       </Routes>
       
       <Footer/>
-
+      <ScrollToTop style={{ right: '8px' }}
+        smooth
+        viewBox="0 0 24 24"
+        component={<ArrowUpwardIcon />}
+      />
       <ToastContainer
         position="bottom-center"
         autoClose={5000}
