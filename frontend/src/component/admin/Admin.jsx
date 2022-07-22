@@ -67,7 +67,7 @@ useEffect(() => {
             <input type="text" placeholder="Ingrese la marca del producto" name="producto_marca" className="box" />
             <input type="text" placeholder="Ingrese el color del producto" name="producto_color" className="box" />
             <input type="text" placeholder="Ingrese las pulgadas " name="producto_pulgadas" className="box" />
-            <input type="text" placeholder="Ingrese capacidad de memoria RAM" name="producto_RAM" className="box" />
+            <input type="number" placeholder="Ingrese capacidad de memoria RAM" name="producto_RAM" className="box" />
             <input type="text" placeholder="Ingrese la categoria del producto" name="producto_cat" className="box" required />
             <input type="number" placeholder="Ingrese el stock" name="producto_stock" className="box" required />
             <input type="text" placeholder="Ingrese el sistema operativo" name="producto_system" className="box" />

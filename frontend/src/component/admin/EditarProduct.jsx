@@ -1,6 +1,7 @@
 import React,{useEffect} from 'react'
 import { useSelector,useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import {Link as LinkRouter} from 'react-router-dom';
 import productActions from '../../redux/actions/productActions';
 import './admin.css';
 
@@ -35,7 +36,8 @@ useEffect(() => {
         images:e.target[12].value
 
        }
-       console.log(data)
+
+       dispatch(productActions.modifyProduct(id,data))
     }
  
 
@@ -55,23 +57,26 @@ useEffect(() => {
          <form onSubmit={modifiProduct}>
             <h3>Editar producto</h3>
             <input type="text" value={product.name} placeholder="Ingrese el nombre del producto" name="producto_nombre" className="box" required />
-            <input type="text" value={product.description}  placeholder="Ingrese la descripcion del producto" name="producto_descrep" className="box" required />
-            <input type="number" value={product.price}  placeholder="Ingrese el precio del producto" name="producto_precio" className="box" required />
-            <input type="text" value={product.brand}  placeholder="Ingrese la marca del producto" name="producto_marca" className="box" />
-            <input type="text" value={product.color}  placeholder="Ingrese el color del producto" name="producto_color" className="box" />
-            <input type="text" value={product.sizeTv}  placeholder="Ingrese las pulgadas " name="producto_pulgadas" className="box" />
-            <input type="text" value={product.RAM}  placeholder="Ingrese capacidad de memoria RAM" name="producto_RAM" className="box" />
-            <input type="text" value={product.category}  placeholder="Ingrese la categoria del producto" name="producto_cat" className="box" required />
-            <input type="number" value={product.stock}  placeholder="Ingrese el stock" name="producto_stock" className="box" required />
-            <input type="text" value={product.system}  placeholder="Ingrese el sistema operativo" name="producto_system" className="box" />
-            <input type="text" value={product.disc}  placeholder="Ingrese el disco del producto" name="producto_disco" className="box" />
-            <input type="text" value={product.processor}  placeholder="Ingrese el procesador del producto" name="producto_prosser" className="box" />
+            <input type="text"  placeholder="Ingrese la descripcion del producto" name="producto_descrep" className="box" required />
+            <input type="number" placeholder="Ingrese el precio del producto" name="producto_precio" className="box" required />
+            <input type="text"  placeholder="Ingrese la marca del producto" name="producto_marca" className="box" />
+            <input type="text"  placeholder="Ingrese el color del producto" name="producto_color" className="box" />
+            <input type="text"  placeholder="Ingrese las pulgadas " name="producto_pulgadas" className="box" />
+            <input type="number"  placeholder="Ingrese capacidad de memoria RAM" name="producto_RAM" className="box" />
+            <input type="text"   placeholder="Ingrese la categoria del producto" name="producto_cat" className="box" required />
+            <input type="number" placeholder="Ingrese el stock" name="producto_stock" className="box" required />
+            <input type="text"   placeholder="Ingrese el sistema operativo" name="producto_system" className="box" />
+            <input type="text"  placeholder="Ingrese el disco del producto" name="producto_disco" className="box" />
+            <input type="text"  placeholder="Ingrese el procesador del producto" name="producto_prosser" className="box" />
  
-            <input  type="text" value={product.images} placeholder="Ingrese la imagen del producto" name="producto_imagen" className="box" required />
+            <input  type="text" placeholder="Ingrese la imagen del producto" name="producto_imagen" className="box" required />
             {/* <input type="file" accept="image/png, image/jpeg, image/jpg"  name="producto_image" className="box" /> */}
             <input type="submit" className="btn" name="add_product" value="Editar" />
          </form>
-
+   
+   
+         <LinkRouter to={`/panel`}><button className="btn">VOLVER AL PANEL</button></LinkRouter>
+       
       </div>
       
    

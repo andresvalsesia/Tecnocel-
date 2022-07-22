@@ -46,6 +46,27 @@ const productController={
      
      },
 
+     modifyProduct: async(req, res)=>{
+        let id=req.params.id;
+        let product=req.body.data
+        let productdb;
+     console.log(id)
+           try{
+             productdb=await Product.findOneAndUpdate({_id:id},product,{new:true});
+             res.json({success:true,message:"PRODUCTO MODIFICADO EXITOSAMENTE"})
+           }
+          catch(err){
+         console.log(err)
+            res.json({
+            
+              success:false,
+              message:"Ocurrio un problema intente nuevamente",
+            });
+          
+          }
+
+     },
+
      deleteProduct: async (req,res) => {
       let id=req.params.id
       let product;

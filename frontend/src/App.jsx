@@ -112,8 +112,9 @@ function App() {
      <>
       
       <Routes>
-      <Route path="/" element={<Admin/>}/>
-      <Route path="/password/forgot" element={<LoginSignUp/>}/>
+      <Route path="/panel" element={<Admin/>}/>
+      <Route path="/login" element={<LoginSignUp/>}/>
+      <Route path="/about" element={<About/>}/>
       <Route path="/product/:id" element={<EditarProduct/>}/>
       </Routes>
      
