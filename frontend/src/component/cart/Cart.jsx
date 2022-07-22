@@ -8,6 +8,7 @@ import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import DeleteIcon from '@mui/icons-material/Delete';
 import logo from '../../Assets/logo2.png'
+import EmptyCart from "./EmptyCart";
 
 
 const Cart = () => {
@@ -36,7 +37,7 @@ const Cart = () => {
           <BottomTab />
         </div> */}
        
-        
+        {/* <EmptyCart/> */}
           <p className="text-envios-gratis"> Envio gratis y 12 cuotas sin interes desde $1.000</p>
           <div className="boxes">
             <div className="box-productos">
@@ -75,7 +76,7 @@ const Cart = () => {
            {/*      <Paypal/> */}
               </div>
             </div>
-          </div>
+          </div> 
           </div>
       )
       
