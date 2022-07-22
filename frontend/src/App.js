@@ -94,7 +94,6 @@ function App() {
         <Route exact path="/favourites" component={Favourites} />
         <Route exact path="/creator" component={CommingSoon} />
         <Route exact path="/Politicas" component={Politicas} />
-
         <Route exact path="/faq" component={Rules} />
         <Route exact path="/contact" component={Contact} />
         <Route exact path="/more" component={MoreOption} />
