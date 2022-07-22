@@ -1,6 +1,6 @@
-import React,{useState,useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { useSelector,useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { ToastContainer, toast } from 'react-toastify';
 import userActions from './redux/actions/userActions';
 import productActions from './redux/actions/productActions';
@@ -18,121 +18,124 @@ import Home from '../src/component/home/Home';
 import Products from '../src/component/Products/Products';
 import './App.css';
 import ProductDetails from './component/Products/ProductDetails';
+import Politicas from './component/politicas/Politicas';
 
 const storage = JSON.parse(localStorage.getItem('carrito'))
 
 function App() {
 
-  const [reload,setReload]=useState(false)
-  const dispatch=useDispatch();
+  const [reload, setReload] = useState(false)
+  const dispatch = useDispatch();
 
 
   useEffect(() => {
-   
-     dispatch(productActions.getAllProducts())
-     localStorage.setItem('carrito',JSON.stringify(carrito))
-     
-     if (localStorage.getItem('token') !== null) {
+
+    dispatch(productActions.getAllProducts())
+    localStorage.setItem('carrito', JSON.stringify(carrito))
+
+    if (localStorage.getItem('token') !== null) {
       const token = localStorage.getItem('token');
       dispatch(userActions.verificarToken(token))
     }
-    
+
     setTimeout(() => {
       window.scrollTo(0, 0);
     }, 500);
 
   }, [reload]);
 
- let products=useSelector(store=>store.productReducer.products)
- let carrito=useSelector(store=>store.productReducer.carrito)
- let user = useSelector(store => store.userReducer.user)
-
-
- 
- if (storage) {
-   carrito = storage;
- } 
-
-
- let message = useSelector(store => store.userReducer.snackbar)
-
- if (message.view) {
-
-   message.success ? toast.success(message.message, {
-     position: "bottom-center",
-     autoClose: 5000,
-     hideProgressBar: false,
-     closeOnClick: true,
-     pauseOnHover: true,
-     draggable: true,
-     progress: undefined,
-   })
-   :
-    
-       toast.warn(message.message, {
-         position: "bottom-center",
-         autoClose: 5000,
-         hideProgressBar: false,
-         closeOnClick: true,
-         pauseOnHover: true,
-         draggable: true,
-         progress: undefined,
-       }) 
-      
-       
-   if(Array.isArray(message.message)){
-      message.message.map((text)=>{toast['error'](text.message)}) 
-   }
-
-    dispatch({ type: 'MESSAGE', payload: { view: false, message: "", success: false } }) 
- } 
+  let products = useSelector(store => store.productReducer.products)
+  let carrito = useSelector(store => store.productReducer.carrito)
+  let user = useSelector(store => store.userReducer.user)
 
 
 
+  if (storage) {
+    carrito = storage;
+  }
 
 
- const addToCart = async (id) =>{
-  
-  await dispatch(productActions.agregarCarrito(id))
-  setReload(!reload)
- 
- };
+  let message = useSelector(store => store.userReducer.snackbar)
 
- const removeToCart = async (id,all=false) =>{
+  if (message.view) {
 
-   if(all){
+    message.success ? toast.success(message.message, {
+      position: "bottom-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    })
+      :
+
+      toast.warn(message.message, {
+        position: "bottom-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      })
+
+
+    if (Array.isArray(message.message)) {
+      message.message.map((text) => { toast['error'](text.message) })
+    }
+
+    dispatch({ type: 'MESSAGE', payload: { view: false, message: "", success: false } })
+  }
+
+
+
+
+
+  const addToCart = async (id) => {
+
+    await dispatch(productActions.agregarCarrito(id))
+    setReload(!reload)
+
+  };
+
+  const removeToCart = async (id, all = false) => {
+
+    if (all) {
 
       await dispatch(productActions.removerTodoCarrito(id))
       setReload(!reload)
 
-   } else{
+    } else {
       await dispatch(productActions.removerCarrito(id))
       setReload(!reload)
-   }
- 
- };   
+    }
 
- const clearCart = async () =>{
+  };
 
-     await dispatch(productActions.limpiarCarrito())
-     setReload(!reload)
-      
- };
+  const clearCart = async () => {
+
+    await dispatch(productActions.limpiarCarrito())
+    setReload(!reload)
+
+  };
 
 
   return (
-     <>
-      <Header/>
+    <>
+      <Header /> 
       <Routes>
-      <Route path="/" element={<Admin/>}/>
-      {/* <Route path="/cart" element={<Cart/>}/> */}
-      <Route path="/login" element={<LoginSignUp/>}/>
-      <Route path="/about" element={<About/>}/>
-      <Route path="/product/:id" element={<EditarProduct/>}/>
-      <Route path="/productDetails/:id" element={<ProductDetails/>}/>
+        <Route path="/" element={<Admin />} />
+        {/* <Route path="/cart" element={<Cart/>}/> */}
+        <Route path="/login" element={<LoginSignUp />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/product/:id" element={<EditarProduct />} />
+        <Route path="/productDetails/:id" element={<ProductDetails />} />
+        <Route path="/politicas" element={<Politicas />} />
+
       </Routes>
-      
-      <Footer/>
+
+      <Footer />
       <ScrollToTop style={{ right: '8px' }}
         smooth
         viewBox="0 0 24 24"
@@ -149,9 +152,9 @@ function App() {
         draggable
         pauseOnHover
       />
-     
 
-      </>  
+
+    </>
 
   );
 }
@@ -159,7 +162,7 @@ function App() {
 export default App;
 
 
- {/*  <h1>CARRITO DE COMPRAS</h1>
+{/*  <h1>CARRITO DE COMPRAS</h1>
        <h3>productos</h3>
        <article className="box grid-responsive">
         {products && 

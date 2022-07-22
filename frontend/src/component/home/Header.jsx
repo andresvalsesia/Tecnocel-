@@ -127,10 +127,10 @@ const Header = () => {
             }}
           >
             <Link to="/">
-              <li className="buttonnav">Home</li>
+              <li className="buttonnav">Inicio</li>
             </Link>
             <Link to="/about">
-              <li className="buttonnav" >About</li>
+              <li className="buttonnav" >Nosotros</li>
             </Link>
             <Link to="/Products">
               <li className="buttonnav" >Productos</li>
@@ -138,11 +138,11 @@ const Header = () => {
             <Link to="/creator">
               <li className="buttonnav" >Become A Seller</li>
             </Link>
-            <Link to="/faq">
+            <Link to="/politicas">
               <li className="buttonnav" >Politicas de privacidad</li>
             </Link>
             <Link to="/contact">
-              <li className="buttonnav" >Contact0</li>
+              <li className="buttonnav" >Contacto</li>
             </Link>
           </ul>
         </div>

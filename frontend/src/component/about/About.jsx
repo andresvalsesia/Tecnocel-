@@ -35,13 +35,13 @@ const About = () => {
                   color:"rgb(136,211,23)",
                 }}
               >
-                Bienvenidos a Tecnocel 
+                Bienvenidos a TecnoCel !
               </span>
               <p>
               ¿Te gusta la tecnologia?
               </p>
               <p>
-                Bien si la respuesta es si, esta es tu pagina! Los mejores precios, las principales marcas,
+                Bien si la respuesta es si, ésta es tu página! Los mejores precios, las principales marcas,
                 todo los que te gusta y buscas en un solo lugar!
               </p>
               <p>

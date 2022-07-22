@@ -19,8 +19,7 @@ const Home = () => {
 
   return (
     <>
-    
-         
+            
           <>
             <MetaData title="Home" />
   
