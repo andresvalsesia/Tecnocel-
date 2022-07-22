@@ -132,6 +132,11 @@ function App() {
         <Route path="/product/:id" element={<EditarProduct />} />
         <Route path="/productDetails/:id" element={<ProductDetails />} />
         <Route path="/politicas" element={<Politicas />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/contact" element={<Contact />} />
+
+
+
 
       </Routes>
 
