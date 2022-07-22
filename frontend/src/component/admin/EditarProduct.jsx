@@ -75,7 +75,7 @@ useEffect(() => {
          </form>
    
    
-         <LinkRouter to={`/panel`}><button className="btn">VOLVER AL PANEL</button></LinkRouter>
+         <LinkRouter to={`/`}><button className="btn">VOLVER AL PANEL</button></LinkRouter>
        
       </div>
       

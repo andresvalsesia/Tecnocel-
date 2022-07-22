@@ -26,6 +26,7 @@ html{
 .btn{
    display: block;
    width: 100%;
+   text-align: center;
    cursor: pointer;
    border-radius: .5rem;
    margin-top: 1rem;
@@ -38,7 +39,8 @@ html{
  
 }
 .btn-edit{
-   background-color: yellow;
+   background-color: #00b347!important;
+  
 }
 
 .btn:hover{

@@ -9,6 +9,7 @@ import EditarProduct from './component/admin/EditarProduct';
 import Cart from '../src/component/cart/Cart';
 import About from '../src/component/about/About';
 import Admin from '../src/component/admin/Admin';
+import Contact from '../src/component/contact/Contact';
 import './App.css';
 
 const storage = JSON.parse(localStorage.getItem('carrito'))
@@ -113,7 +114,7 @@ function App() {
      <>
       
       <Routes>
-      <Route path="/" element={<Cart/>}/>
+      <Route path="/" element={<Contact/>}/>
       {/* <Route path="/cart" element={<Cart/>}/> */}
       <Route path="/login" element={<LoginSignUp/>}/>
       <Route path="/about" element={<About/>}/>

@@ -77,7 +77,7 @@ useEffect(() => {
  
             <input type="text" placeholder="Ingrese la imagen del producto" name="producto_imagen" className="box" required />
             {/* <input type="file" accept="image/png, image/jpeg, image/jpg"  name="producto_image" className="box" /> */}
-            <input type="submit" className="btn" name="add_product" value="Agregar" />
+            <input type="submit" className="btn" name="add_product" value="AGREGAR" />
          </form>
 
       </div>
