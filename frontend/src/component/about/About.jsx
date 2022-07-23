@@ -27,7 +27,7 @@ const About = () => {
           </div>
           <div className="col__2">
             <div className="meta">
-              <span
+              <span className="text-principal"
                 style={{
                   fontSize: "40px",
                   fontWeight: "700",
@@ -37,14 +37,14 @@ const About = () => {
               >
                 Bienvenidos a Tecnocel 
               </span>
-              <p>
+              <p className="p-style">
               ¿Te gusta la tecnologia?
               </p>
-              <p>
+              <p className="p-style">
                 Bien si la respuesta es si, esta es tu pagina! Los mejores precios, las principales marcas,
                 todo los que te gusta y buscas en un solo lugar!
               </p>
-              <p>
+              <p className="p-style">
                 Una empresa Argentina haciendo foco en la innovacion y calidad, Tecnocel vende preductos y experiencias... 
                 Fundada en 2022 en Cordoba, Argentina, y en expancion hacia el mundo... 
                 Tecnocel... Conecta tu mundo...
@@ -56,7 +56,7 @@ const About = () => {
         {/* 2nd verse */}
         <div className="second">
           <div className="heading">
-            <h2>¿Qué ofrecemos?</h2>
+            <h2 className="text-secondary">¿Qué ofrecemos?</h2>
           </div>
           <div className="row flex">
             <div className="col__3">
@@ -74,7 +74,7 @@ const About = () => {
               }}
               >
               Mejores precios y ofertas</span>
-              <p>
+              <p className="p-style">
               Tenemos los mejores precios de celulares, notebook y ofertas especiales para clientes
               </p>
               </div>
@@ -93,7 +93,7 @@ const About = () => {
                 color:"rgb(136,211,23)",
               }}
               >Lo mejor para la confianza y la calidad</span>
-              <p> 
+              <p className="p-style"> 
               Nos preocupamos por los clientes, ya que los hacemos parte de nuestra gran familia para que vuelvan a elegirnos
               </p>
               </div>
@@ -112,7 +112,7 @@ const About = () => {
                 color:"rgb(136,211,23)",
               }}
               >Sistema de entrega rápida</span>
-              <p> 
+              <p className="p-style"> 
               Podemos enviar a cualquier lugar, solo necesitamos tu dirección y ¡listo!
               </p>
               </div>
@@ -133,7 +133,7 @@ const About = () => {
                 color:"rgb(136,211,23)",
               }}
               >Servicio de devoluciones agiles</span>
-              <p>
+              <p className="p-style">
               Si no es lo que pediste, puedes devolverlo dentro de los primeros 30 días
               </p>
               </div>
@@ -155,7 +155,7 @@ const About = () => {
                 color:"rgb(136,211,23)",
               }}
               >Gran oferta diaria</span>
-              <p>
+              <p className="p-style">
               Contamos con un amplio mercado para poder comprar de manera segura y efectiva!!!
               </p>
               </div>

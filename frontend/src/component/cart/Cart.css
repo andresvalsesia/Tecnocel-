@@ -13,7 +13,7 @@
   
   .productos {
     display: grid;
-    grid-template-columns: 4fr 0.9fr 0.5fr 0.7fr 0.2fr;
+    grid-template-columns: 4fr 1.5fr 1fr 0.7fr 0.2fr;
     gap: 2rem;
     padding: 1rem 0 1rem 0;
     border-bottom: 1px solid #88D317;
@@ -36,6 +36,8 @@
   .productos p {
     color: white;
     text-align: justify;
+    margin: 0;
+    padding: 0;
   }
   
   .productos h5 {
@@ -107,7 +109,7 @@
   
   .titulo-productos {
     display: grid;
-    grid-template-columns: 4fr 0.9fr 0.5fr 0.7fr 0.2fr;
+    grid-template-columns: 4fr 1.5fr 1fr 0.7fr 0.2fr;
     color: white;
     font-weight: bold;
     gap: 2rem;
@@ -116,6 +118,8 @@
 
   .titulo-productos p {
     text-align: justify;
+    padding: 0;
+    margin: 0;
   }
   
   .img-texto {
@@ -127,10 +131,6 @@
   .img-texto h3 {
     width: 25rem !important;
     text-align: initial;
-  }
-  
-  div {
-    overflow: visible !important;
   }
   
   .boxes {
