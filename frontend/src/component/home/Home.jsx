@@ -33,7 +33,8 @@ const Home = () => {
               <div className="home__content">
                 <div style={{
                   display: "flex",
-                  alignItems: "center",
+                  alignItems: "center", 
+                  
                 }}>
                   <h2 style={{
                     fontFamily: "roboto",
