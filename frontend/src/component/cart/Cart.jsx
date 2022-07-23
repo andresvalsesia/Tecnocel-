@@ -1,25 +1,59 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import './Cart.css';
 import { useSelector, useDispatch } from "react-redux";
-import { Typography } from "@material-ui/core";
+import productActions from '../../redux/actions/productActions';
+import { Typography,Button } from "@material-ui/core";
 import RemoveShoppingCartIcon from "@material-ui/icons/RemoveShoppingCart";
 import { Link } from "react-router-dom";
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import DeleteIcon from '@mui/icons-material/Delete';
-import logo from '../../Assets/logo2.png'
+import logo from '../../Assets/Tecnocel.png';
 import EmptyCart from "./EmptyCart";
-import Paypal from "./Paypal";
+
 
 
 const Cart = () => {
 
+  const [reload,setReload]=useState(false);
   const dispatch = useDispatch();
+  
 
-/*   const subtotal = data.map((item) => item.price * item.quantity) */
 
-/*   const total = subtotal.reduce((sum, a) => sum + a, 0) */
+  let carrito = useSelector(store => store.productReducer.carrito)
 
+  const subtotal = carrito.map((item) => item.price * item.__v) 
+
+  const total = subtotal.reduce((sum, a) => sum + a, 0)
+
+
+const addToCart = async (id) => {
+
+  await dispatch(productActions.agregarCarrito(id))
+  setReload(!reload)
+
+};
+
+const removeToCart = async (id, all = false) => {
+
+  if (all) {
+
+    await dispatch(productActions.removerTodoCarrito(id))
+    setReload(!reload)
+
+  } else {
+    await dispatch(productActions.removerCarrito(id))
+    setReload(!reload)
+  }
+
+};
+
+const clearCart = async () => {
+  
+  await dispatch(productActions.limpiarCarrito())
+  setReload(!reload)
+
+};
 
 
   return (
@@ -49,32 +83,39 @@ const Cart = () => {
               <p>Subtotal</p>
               </div>
               
-                  <div className="productos">
+              
+              {carrito ? carrito.map(item=>
+                
+                <div className="productos">
                     <div className="img-texto">
-                    <img src="https://www.clarin.com/img/2020/03/18/jubilados-y-pensionados-podran-comprarse___KZIwNegWR_340x340__1.jpg" alt="" height="90rem" width="90rem"></img>
-                    <h3>Gateway GWTC116 2-en-1 Convertible Tactil - Color BLACK</h3>
+                    <img src={item.images} alt="" height="90rem" width="90rem"></img>
+                    <h3>{item.name}</h3>
                     </div>
-                    <p style={{fontWeight: "bold", fontSize: "16px"}}>$ 300</p>
+                    <p style={{fontWeight: "bold", fontSize: "16px"}}>{item.price}</p>
                     <div className="cantidad">
-                    <RemoveIcon style={{color: "#88D317", cursor: "pointer", fontSize: "2.3rem"}}/>
-                    <p style={{fontWeight: "bold"}}>10</p>
-                    <AddIcon style={{color: "#88D317", cursor: "pointer", fontSize: "2.3rem"}}/>
+                  <Button onClick={()=>removeToCart(item._id)}> <RemoveIcon style={{color: "#88D317", cursor: "pointer", fontSize: "2.3rem"}}/></Button>
+                    <p style={{fontWeight: "bold"}}>{item.__v}</p>
+                   <Button onClick={()=>addToCart(item._id)}><AddIcon style={{color: "#88D317", cursor: "pointer", fontSize: "2.3rem"}}/></Button>
                     </div>
-                    <h5>$ 300</h5>
-                    <DeleteIcon style={{color: "#88D317", cursor: "pointer", fontSize: "2.3rem"}} />
+                    <h5>{item.price*item.__v}</h5>
+                 <Button onClick={()=>removeToCart(item._id,true)}><DeleteIcon style={{color: "#88D317", cursor: "pointer", fontSize: "2.3rem"}} /></Button>
                   </div>
+                
+                
+                ):<div>NO TIENES PRODUCTOS EN EL CARRITO</div>}
+                  
            
-                <p className="vaciar-carrito"> <DeleteIcon style={{color: "#88D317", cursor: "pointer", fontSize: "2.3rem"}} />Vaciar Carrito</p>
+                <button onClick={clearCart} className="vaciar-carrito"> <DeleteIcon style={{color: "#88D317", cursor: "pointer", fontSize: "2.3rem"}} />Vaciar Carrito</button>
             </div>
             <div className="box-resumen">
               <h4>Resumen de compra</h4>
               <div className="total-link">
-                <p>Total: $300</p>
-                <p>{}</p>
+                <p>Total: {total}</p>
+                
                 <button className="button-compra">
                   Iniciar Compra
                 </button>
-                <Paypal/>
+            {/*     <Paypal/> */}
               </div>
             </div>
           </div> 

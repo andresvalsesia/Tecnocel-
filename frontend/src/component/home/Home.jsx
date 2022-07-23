@@ -11,6 +11,7 @@ import Loading from "../more/Loader";
 
 
 const Home = () => {
+  
   const dispatch = useDispatch();
 
   useEffect(() => {
