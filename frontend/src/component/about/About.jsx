@@ -7,8 +7,7 @@ import "./About.css";
 const About = () => {
   
   return (
-    <>
-   
+    <>   
     
     <MetaData title="Nosotros" />
     <div>
