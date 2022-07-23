@@ -7,6 +7,9 @@ import { Link } from "react-router-dom";
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import DeleteIcon from '@mui/icons-material/Delete';
+import logo from '../../Assets/logo2.png'
+import EmptyCart from "./EmptyCart";
+import Paypal from "./Paypal";
 
 
 const Cart = () => {
@@ -24,7 +27,7 @@ const Cart = () => {
     <div className="logo-linkdiv">
       <div className="logo-link">
         <Link className="link-inicio" to="/">Ir al Inicio</Link>
-        <img src="https://www.clarin.com/img/2020/03/18/jubilados-y-pensionados-podran-comprarse___KZIwNegWR_340x340__1.jpg" alt="logo" height={150}></img>
+        <img src={logo} alt="logo" height={150}></img>
       </div>
     </div>
        
@@ -35,8 +38,8 @@ const Cart = () => {
           <BottomTab />
         </div> */}
        
-        
-          <p className="text-envios-gratis"> Envio gratis y 6 cuotas sin interes desde $1.000</p>
+        {/* <EmptyCart/> */}
+          <p className="text-envios-gratis"> Envio gratis y 12 cuotas sin interes desde $1.000</p>
           <div className="boxes">
             <div className="box-productos">
               <div className="titulo-productos">
@@ -49,32 +52,32 @@ const Cart = () => {
                   <div className="productos">
                     <div className="img-texto">
                     <img src="https://www.clarin.com/img/2020/03/18/jubilados-y-pensionados-podran-comprarse___KZIwNegWR_340x340__1.jpg" alt="" height="90rem" width="90rem"></img>
-                    <h3>Nombre Producto</h3>
+                    <h3>Gateway GWTC116 2-en-1 Convertible Tactil - Color BLACK</h3>
                     </div>
-                    <p style={{fontWeight: "bold"}}>$ Precio</p>
+                    <p style={{fontWeight: "bold", fontSize: "16px"}}>$ 300</p>
                     <div className="cantidad">
-                    <RemoveIcon style={{color: "#88D317", cursor: "pointer"}}/>
-                    <p>Cantidad</p>
-                    <AddIcon style={{color: "#88D317", cursor: "pointer"}}/>
+                    <RemoveIcon style={{color: "#88D317", cursor: "pointer", fontSize: "2.3rem"}}/>
+                    <p style={{fontWeight: "bold"}}>10</p>
+                    <AddIcon style={{color: "#88D317", cursor: "pointer", fontSize: "2.3rem"}}/>
                     </div>
-                    <h5>$ Total</h5>
-                    <DeleteIcon style={{color: "#88D317", cursor: "pointer"}} />
+                    <h5>$ 300</h5>
+                    <DeleteIcon style={{color: "#88D317", cursor: "pointer", fontSize: "2.3rem"}} />
                   </div>
            
-                <p className="vaciar-carrito"> <DeleteIcon style={{color: "#88D317", cursor: "pointer"}} />Vaciar Carrito</p>
+                <p className="vaciar-carrito"> <DeleteIcon style={{color: "#88D317", cursor: "pointer", fontSize: "2.3rem"}} />Vaciar Carrito</p>
             </div>
             <div className="box-resumen">
               <h4>Resumen de compra</h4>
               <div className="total-link">
-                <p>Total: TOTAL</p>
+                <p>Total: $300</p>
                 <p>{}</p>
                 <button className="button-compra">
                   Iniciar Compra
                 </button>
-           {/*      <Paypal/> */}
+                <Paypal/>
               </div>
             </div>
-          </div>
+          </div> 
           </div>
       )
       
