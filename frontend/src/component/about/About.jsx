@@ -10,7 +10,7 @@ const About = () => {
     <>
    
     
-    <MetaData title="About" />
+    <MetaData title="Nosotros" />
     <div>
     
     <div
@@ -35,19 +35,19 @@ const About = () => {
                   color:"rgb(136,211,23)",
                 }}
               >
-                Bienvenidos a Tecnocel 
+                Bienvenidos a TecnoCel 
               </span>
               <p className="p-style">
-              ¿Te gusta la tecnologia?
+              ¿Te gusta la tecnología?
               </p>
               <p className="p-style">
-                Bien si la respuesta es si, esta es tu pagina! Los mejores precios, las principales marcas,
+                Bien, si la respuesta es si, ésta es tu página! Los mejores precios, las principales marcas,
                 todo los que te gusta y buscas en un solo lugar!
               </p>
               <p className="p-style">
-                Una empresa Argentina haciendo foco en la innovacion y calidad, Tecnocel vende preductos y experiencias... 
-                Fundada en 2022 en Cordoba, Argentina, y en expancion hacia el mundo... 
-                Tecnocel... Conecta tu mundo...
+                Una empresa Argentina haciendo foco en la innovacion y calidad, TecnoCel vende productos y experiencias... 
+                Fundada en 2022 en Córdoba, Argentina, y en expanción hacia el mundo... 
+                TecnoCel... Conecta tu mundo...
               </p>
             </div>
           </div>
