@@ -125,7 +125,7 @@ function App() {
     <>
       <Header /> 
       <Routes>
-        <Route path="/" element={<Admin />} />
+        <Route path="/" element={<Home />} />
         <Route path="/cart" element={<Cart/>}/>
         <Route path="/login" element={<LoginSignUp />} />
         <Route path="/about" element={<About />} />
@@ -134,10 +134,6 @@ function App() {
         <Route path="/politicas" element={<Politicas />} />
         <Route path="/products" element={<Products />} />
         <Route path="/contact" element={<Contact />} />
-
-
-
-
       </Routes>
 
       <Footer />
