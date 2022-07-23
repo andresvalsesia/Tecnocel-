@@ -9,10 +9,7 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import DeleteIcon from '@mui/icons-material/Delete';
 import logo from '../../Assets/Tecnocel.png'
 import EmptyCart from "./EmptyCart";
-<<<<<<< HEAD
 // import Paypal from "./Paypal";
-=======
->>>>>>> 2ea8f52bc89bf6b81381adcafc3e1625c4711f6c
 
 
 const Cart = () => {
