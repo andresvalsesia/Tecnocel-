@@ -1,8 +1,7 @@
 
-  
   .inputBox > span{
       font-family: "Roboto";
-      animation: sliding 14s linear infinite;
+      animation: sliding 12s linear infinite;
       display: block;
   }
   .inputBox {
@@ -22,6 +21,7 @@
   margin-left:1rem;
   color: #88D317;
   border-radius: 0.2rem;
+  font-size:2rem;
   }
   @keyframes sliding{
       0%{
