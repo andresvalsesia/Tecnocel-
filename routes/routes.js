@@ -3,7 +3,7 @@ const validator = require('../config/validator');
 
 const userController = require('../controller/userController');
 const productController = require('../controller/productController');
-const passport =require('../config/passport');
+// const passport =require('../config/passport');
 
 
 const { signUpUsers, signInUsers, verifyMail, verificarToken, traerUsuarios } = userController;
@@ -22,10 +22,10 @@ Router.route('/auth/login')
 Router.route('/verify/:string')
     .get(verifyMail)
 
-Router.route('/auth/signInToken')
-    .get(passport.authenticate('jwt',{session:false}),verificarToken)
+// Router.route('/auth/signInToken')
+//     .get(passport.authenticate('jwt',{session:false}),verificarToken)
 
-// products
+// // products
 
 Router.route('/product/new')
     .post(createProduct)

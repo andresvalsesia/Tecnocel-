@@ -125,11 +125,7 @@ function App() {
     <>
       <Header /> 
       <Routes>
-<<<<<<< HEAD
         <Route path="/" element={<Home />} />
-=======
-        <Route path="/" element={<Admin />} />
->>>>>>> 9060e53e8edfabb1a0844d23c0224b2ecac91e88
         <Route path="/cart" element={<Cart/>}/>
         <Route path="/login" element={<LoginSignUp />} />
         <Route path="/about" element={<About />} />

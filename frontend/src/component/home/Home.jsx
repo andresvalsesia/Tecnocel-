@@ -5,7 +5,8 @@ import Carousel from "react-material-ui-carousel";
 import { useDispatch, useSelector } from "react-redux"
 import Header from "./Header";
 import MetaData from "../../component/more/Metadata";
-
+import bg from "../../Assets/background.jpg";
+import bg2 from "../../Assets/background2.jpg";
 import Loading from "../more/Loader";
 
 
@@ -27,8 +28,8 @@ const Home = () => {
             {/* Carousel */}
             <div className="banner">
               <Carousel>
-                <img src="https://picsum.photos/200/300" className="bgImg" alt='' />
-                <img src="https://picsum.photos/200/300" className="bgImg" alt='' />
+                <img src={bg} className="bgImg" alt='' />
+                <img src={bg2} className="bgImg" alt='' />
               </Carousel>
               <div className="home__content">
                 <div style={{
