@@ -34,6 +34,7 @@ const Home = () => {
                 <div style={{
                   display: "flex",
                   alignItems: "center", 
+
                   
                 }}>
                   <h2 style={{

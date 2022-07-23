@@ -104,6 +104,8 @@ const clearCart = async () => {
                 
                 ):<div>NO TIENES PRODUCTOS EN EL CARRITO</div>}
                 
+                
+
                   
            
                 <button onClick={clearCart} className="vaciar-carrito"> <DeleteIcon style={{color: "#88D317", cursor: "pointer", fontSize: "2.3rem"}} />Vaciar Carrito</button>
