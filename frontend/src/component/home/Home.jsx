@@ -43,7 +43,7 @@ const Home = () => {
                     fontSize: "3em",
                     fontWeight: "500",
                     color: "#fff"
-                  }}>Lo ultimo en equipos</h2>
+                  }}>Lo último en equipos</h2>
                 </div>
                 <div>
                   <h2 style={{
@@ -74,7 +74,7 @@ const Home = () => {
                       cursor: "pointer"
                     }}
                       className="Home__button"
-                    >Ver mas</button>
+                    >Ver más!</button>
                   </a>
                 </div>
               </div>
