@@ -9,7 +9,6 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import DeleteIcon from '@mui/icons-material/Delete';
 import logo from '../../Assets/Tecnocel.png'
 import EmptyCart from "./EmptyCart";
-import Paypal from "./Paypal";
 
 
 const Cart = () => {
@@ -74,7 +73,7 @@ const Cart = () => {
                 <button className="button-compra">
                   Iniciar Compra
                 </button>
-                <Paypal/>
+                {/* <Paypal/> */}
               </div>
             </div>
           </div> 

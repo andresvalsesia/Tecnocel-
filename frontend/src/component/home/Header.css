@@ -5,6 +5,9 @@
       animation: sliding 14s linear infinite;
       display: block;
   }
+  .inputBox {
+    overflow: hidden !important;
+  }
   .Header__topbar{
     background-color:#1A0315;
   }
