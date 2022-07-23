@@ -133,6 +133,10 @@
     text-align: initial;
   }
   
+  div {
+    overflow: visible;
+  }
+  
   .boxes {
     overflow: visible;
     margin-top: 3rem;

@@ -1,16 +1,16 @@
 .empty-cart {
-    -moz-box-shadow: 0 0 6px   #88D317;
-    -webkit-box-shadow: 0 0 6px   #88D317;
-    box-shadow: 0 0 30px #88D317;
     padding: 2rem;
     height: fit-content;
     background-color: #101010;
     color: white;
+    text-align: center;
+
 }
 
 .empty-cart h2 {
     margin-bottom: 2rem;
     font-size: 20px;
+    text-decoration: none;
 }
 
 @media (max-width: 640px) {
