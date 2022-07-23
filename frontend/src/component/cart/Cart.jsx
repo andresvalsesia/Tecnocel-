@@ -8,12 +8,7 @@ import { Link } from "react-router-dom";
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import DeleteIcon from '@mui/icons-material/Delete';
-
 import logo from '../../Assets/Tecnocel.png';
-import EmptyCart from "./EmptyCart";
-
-
-import logo from '../../Assets/Tecnocel.png'
 import EmptyCart from "./EmptyCart";
 
 

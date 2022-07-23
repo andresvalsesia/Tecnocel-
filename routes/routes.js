@@ -16,14 +16,14 @@ Router.route("/alluser")
 Router.route('/auth/register')
     .post(signUpUsers)
 
-Router.route('/auth/login')
+Router.route('/auth/login') 
     .post(signInUsers)
 
 Router.route('/verify/:string')
     .get(verifyMail)
 
 Router.route('/auth/signInToken')
-    .get(passport.authenticate('jwt',{session:false}),verificarToken)
+    .get(passport.authenticate('jwt',{session:false}),verificarToken) 
 
 // products
 
