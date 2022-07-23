@@ -11,7 +11,9 @@ import { useDispatch, useSelector } from "react-redux";
 import Loader from "../more/Loader";
 import MetaData from "../more/Metadata";
 import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css"; 
+import "react-toastify/dist/ReactToastify.css";
+import GoogleSignIn from '../login/GoogleSignIn'
+import GoogleSignUp from '../login/GoogleSignUp'
 
 const LoginSignup = () => {
 
@@ -112,8 +114,8 @@ const LoginSignup = () => {
             <div className="LoginSignUpBox">
               <div>
                 <div className="login_signUp_toggle">
-                  <p onClick={(e) => switchTabs(e, "login")}>LOGIN</p>
-                  <p onClick={(e) => switchTabs(e, "register")}>REGISTER</p>
+                  <p onClick={(e) => switchTabs(e, "login")}>INICIAR SESION</p>
+                  <p onClick={(e) => switchTabs(e, "register")}>REGISTRO</p>
                 </div>
                 <button ref={switcherTab}></button>
               </div>
@@ -131,13 +133,14 @@ const LoginSignup = () => {
                   <LockOpenIcon />
                   <input
                     type="password"
-                    placeholder="Password"
+                    placeholder="Contraseña"
                     required
                     style={{fontSize: "2rem"}}
                   />
                 </div>
-                <Link  to="/password/forgot">Forgot Password ?</Link>
-                <input type="submit" value="Login" className="loginBtn" />
+                <Link  to="/password/forgot">¿Has olvidado tu contraseña ?</Link>
+                <input type="submit" value="Iniciar" className="loginBtn" />
+                <GoogleSignIn />
                 <Link to="/">
                   <span className="volver-inicio">Volver a página de Inicio</span>
                 </Link>
@@ -153,7 +156,7 @@ const LoginSignup = () => {
                   <FaceIcon />
                   <input
                     type="text"
-                    placeholder="Name"
+                    placeholder="Nombre"
                     required
                     name="name"
                     value={name}
@@ -175,7 +178,7 @@ const LoginSignup = () => {
                   <LockOpenIcon />
                   <input
                     type="password"
-                    placeholder="Password"
+                    placeholder="Contraseña"
                     required
                     name="password"
                     value={password}
@@ -192,7 +195,8 @@ const LoginSignup = () => {
                     onChange={registerDataChange}
                   />
                 </div>
-                <input type="submit" value="Register" className="signUpBtn" />
+                <input type="submit" value="Registrarse" className="signUpBtn" />
+                <GoogleSignUp /> 
                 <Link to="/">
                   <span className="volver-inicio">Volver a pagina de Inicio</span>
                 </Link>
