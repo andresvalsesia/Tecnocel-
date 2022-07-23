@@ -20,39 +20,42 @@ import './App.css';
 import ProductDetails from './component/Products/ProductDetails';
 import Politicas from './component/politicas/Politicas';
 
-const storage = JSON.parse(localStorage.getItem('carrito'))
 
 function App() {
-
+  
   const [reload, setReload] = useState(false)
   const dispatch = useDispatch();
 
+  const storage = JSON.parse(localStorage.getItem('carrito'))
+  let carrito = useSelector(store => store.productReducer.carrito)
+
+
+  if (storage) {
+    carrito = storage;
+  }
+  useEffect(() => {
+
+    localStorage.setItem('carrito', JSON.stringify(carrito))
+
+  },[carrito])
 
   useEffect(() => {
 
     dispatch(productActions.getAllProducts())
-    localStorage.setItem('carrito', JSON.stringify(carrito))
 
     if (localStorage.getItem('token') !== null) {
       const token = localStorage.getItem('token');
       dispatch(userActions.verificarToken(token))
     }
 
-    setTimeout(() => {
-      window.scrollTo(0, 0);
-    }, 500);
-
   }, [reload]);
 
+
   let products = useSelector(store => store.productReducer.products)
-  let carrito = useSelector(store => store.productReducer.carrito)
   let user = useSelector(store => store.userReducer.user)
 
 
 
-  if (storage) {
-    carrito = storage;
-  }
 
 
   let message = useSelector(store => store.userReducer.snackbar)
