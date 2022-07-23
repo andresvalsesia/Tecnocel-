@@ -1,10 +1,11 @@
 import React from 'react'
 import "./politicas.css";
+import MetaData from "../../component/more/Metadata";
 
 export default function politicas() {
   return (
-
-
+    <>
+    <MetaData title="Politicas" />
     <div className='politicagral' >
       <div className='titulo'>
         <h1>POLÍTICA DE PRIVACIDAD</h1></div>
@@ -95,5 +96,6 @@ export default function politicas() {
       </div>
 
     </div>
+    </>
   )
 }

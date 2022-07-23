@@ -25,7 +25,7 @@ Router.route('/verify/:string')
 Router.route('/auth/signInToken')
     .get(passport.authenticate('jwt',{session:false}),verificarToken) 
 
-// products
+// // products
 
 Router.route('/product/new')
     .post(createProduct)
