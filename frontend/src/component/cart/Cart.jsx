@@ -8,18 +8,16 @@ import { Link } from "react-router-dom";
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import DeleteIcon from '@mui/icons-material/Delete';
-<<<<<<< HEAD
+
 import logo from '../../Assets/Tecnocel.png';
 import EmptyCart from "./EmptyCart";
 
-=======
+
 import logo from '../../Assets/Tecnocel.png'
 import EmptyCart from "./EmptyCart";
-<<<<<<< HEAD
-// import Paypal from "./Paypal";
-=======
->>>>>>> 2ea8f52bc89bf6b81381adcafc3e1625c4711f6c
->>>>>>> 9060e53e8edfabb1a0844d23c0224b2ecac91e88
+
+
+
 
 
 const Cart = () => {
@@ -109,7 +107,7 @@ const clearCart = async () => {
                     <h5>{item.price*item.__v}</h5>
                  <Button onClick={()=>removeToCart(item._id,true)}><DeleteIcon style={{color: "#88D317", cursor: "pointer", fontSize: "2.3rem"}} /></Button>
                   </div>
-<<<<<<< HEAD
+
                 
                 
                 ):<div>NO TIENES PRODUCTOS EN EL CARRITO</div>}
@@ -119,10 +117,10 @@ const clearCart = async () => {
                   
            
                 <button onClick={clearCart} className="vaciar-carrito"> <DeleteIcon style={{color: "#88D317", cursor: "pointer", fontSize: "2.3rem"}} />Vaciar Carrito</button>
-=======
+
             
                 <p className="vaciar-carrito"> <DeleteIcon style={{color: "#88D317", cursor: "pointer", fontSize: "2.3rem"}} />Vaciar Carrito</p>
->>>>>>> 9060e53e8edfabb1a0844d23c0224b2ecac91e88
+
             </div>
             <div className="box-resumen">
               <h4>Resumen de compra</h4>
@@ -132,11 +130,7 @@ const clearCart = async () => {
                 <button className="button-compra">
                   Iniciar Compra
                 </button>
-<<<<<<< HEAD
-            {/*     <Paypal/> */}
-=======
-                {/* <Paypal/> */}
->>>>>>> 9060e53e8edfabb1a0844d23c0224b2ecac91e88
+
               </div>
             </div>
           </div> 
