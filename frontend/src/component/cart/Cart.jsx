@@ -7,9 +7,9 @@ import { Link } from "react-router-dom";
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import DeleteIcon from '@mui/icons-material/Delete';
-import logo from '../../Assets/logo2.png'
+import logo from '../../Assets/Tecnocel.png'
 import EmptyCart from "./EmptyCart";
-import Paypal from "./Paypal";
+// import Paypal from "./Paypal";
 
 
 const Cart = () => {
@@ -63,7 +63,7 @@ const Cart = () => {
                     <h5>$ 300</h5>
                     <DeleteIcon style={{color: "#88D317", cursor: "pointer", fontSize: "2.3rem"}} />
                   </div>
-           
+            
                 <p className="vaciar-carrito"> <DeleteIcon style={{color: "#88D317", cursor: "pointer", fontSize: "2.3rem"}} />Vaciar Carrito</p>
             </div>
             <div className="box-resumen">
@@ -74,7 +74,7 @@ const Cart = () => {
                 <button className="button-compra">
                   Iniciar Compra
                 </button>
-                <Paypal/>
+                {/* <Paypal/> */}
               </div>
             </div>
           </div> 
