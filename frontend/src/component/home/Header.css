@@ -31,3 +31,12 @@
         transform: translateX(130%);
       }
     }
+
+@media (max-width: 1000px) {
+  .inputBox {
+    display: none !important;
+  }
+  .searchBoxHome {
+    display: none;
+  }
+}

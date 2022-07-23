@@ -136,7 +136,7 @@ const Header = () => {
               <li className="buttonnav" >Productos</li>
             </LinkRouter>     
             <LinkRouter  to="/politicas">
-              <li className="buttonnav" >Politicas de privacidad</li>
+              <li className="buttonnav" >Politicas</li>
             </LinkRouter>
             <LinkRouter to="/contact">
               <li className="buttonnav" >Contacto</li>

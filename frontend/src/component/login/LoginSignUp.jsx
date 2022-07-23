@@ -124,7 +124,7 @@ const LoginSignup = () => {
                     type="email"
                     placeholder="Email"
                     required
-                   
+                    style={{fontSize: "2rem"}}
                   />
                 </div>
                 <div className="loginPassword">
@@ -133,12 +133,13 @@ const LoginSignup = () => {
                     type="password"
                     placeholder="Password"
                     required
+                    style={{fontSize: "2rem"}}
                   />
                 </div>
                 <Link  to="/password/forgot">Forgot Password ?</Link>
                 <input type="submit" value="Login" className="loginBtn" />
                 <Link to="/">
-                  <span className="volver-inicio">Volver a pagina de Inicio</span>
+                  <span className="volver-inicio">Volver a página de Inicio</span>
                 </Link>
               </form>
 

@@ -8,6 +8,7 @@ import MetaData from "../../component/more/Metadata";
 import bg from "../../Assets/background.jpg";
 import bg2 from "../../Assets/background2.jpg";
 import Loading from "../more/Loader";
+import { Link } from "react-router-dom";
 
 
 
@@ -62,7 +63,7 @@ const Home = () => {
                   }}>Sin interes</h2>
                 </div>
                 <div>
-                  <a href="#container">
+                  <Link to="/products">
                     <button type="submit" style={{
                       width: "135px",
                       height: "50px",
@@ -71,11 +72,13 @@ const Home = () => {
                       margin: "10px 0",
                       fontSize: "1.2vmax",
                       color: "black",
-                      cursor: "pointer"
+                      cursor: "pointer",
+                      textAlign: "center",
+                      display: "initial"
                     }}
                       className="Home__button"
                     >Ver mas</button>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>           
