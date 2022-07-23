@@ -12,7 +12,7 @@ const Contact = () => {
     
       <div className="contact__main"
         style={{
-          padding: "30px 20px",
+          padding: "20px 10px",
           justifyContent:"flex-start",
           display:"flex",
           flexDirection:"column",
@@ -29,7 +29,7 @@ const Contact = () => {
         <div
           className="box"
           style={{
-            padding: "20px 0px",
+            padding: "1px 0px",
             display: "flex",
             alignItems: "center",
             justifyContent:"center"
