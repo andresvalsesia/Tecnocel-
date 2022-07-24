@@ -5,6 +5,12 @@ const initialState={
  
 }
 
+if(localStorage.getItem('carrito')){
+    initialState.carrito=JSON.parse(localStorage.getItem('carrito'))
+} else{
+    initialState.carrito=[];
+}
+
 const productReducer = (state=initialState,action)=>{
        
     switch (action.type) {

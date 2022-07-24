@@ -13,26 +13,26 @@ import EmptyCart from "./EmptyCart";
 
 
 
-
-
 const Cart = () => {
+
+  
 
   const [reload,setReload]=useState(false);
   const dispatch = useDispatch();
+
+  let carrito = useSelector(store => store.productReducer.carrito) 
+
+  let subtotal = carrito.map((item) => item.price * item.__v) 
+
+  let total = subtotal.reduce((sum, a) => sum + a, 0)
   
-
-
-  let carrito = useSelector(store => store.productReducer.carrito)
-
-  const subtotal = carrito.map((item) => item.price * item.__v) 
-
-  const total = subtotal.reduce((sum, a) => sum + a, 0)
+  
 
 
 const addToCart = async (id) => {
 
   await dispatch(productActions.agregarCarrito(id))
-  setReload(!reload)
+
 
 };
 
@@ -41,11 +41,11 @@ const removeToCart = async (id, all = false) => {
   if (all) {
 
     await dispatch(productActions.removerTodoCarrito(id))
-    setReload(!reload)
+   
 
   } else {
     await dispatch(productActions.removerCarrito(id))
-    setReload(!reload)
+    
   }
 
 };
@@ -53,7 +53,7 @@ const removeToCart = async (id, all = false) => {
 const clearCart = async () => {
   
   await dispatch(productActions.limpiarCarrito())
-  setReload(!reload)
+ 
 
 };
 

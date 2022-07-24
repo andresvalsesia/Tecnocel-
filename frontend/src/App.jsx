@@ -20,40 +20,28 @@ import './App.css';
 import ProductDetails from './component/Products/ProductDetails';
 import Politicas from './component/politicas/Politicas';
 
-const storage = JSON.parse(localStorage.getItem('carrito'))
+
 
 function App() {
 
-  const [reload, setReload] = useState(false)
   const dispatch = useDispatch();
-
-
+  let carrito = useSelector(store => store.productReducer.carrito)
+   
   useEffect(() => {
-
-    dispatch(productActions.getAllProducts())
-    localStorage.setItem('carrito', JSON.stringify(carrito))
+ 
+     localStorage.setItem('carrito', JSON.stringify(carrito))
 
     if (localStorage.getItem('token') !== null) {
       const token = localStorage.getItem('token');
       dispatch(userActions.verificarToken(token))
     }
 
-    setTimeout(() => {
-      window.scrollTo(0, 0);
-    }, 500);
+  }, [carrito]);
 
-  }, [reload]);
+  
 
-  let products = useSelector(store => store.productReducer.products)
-  let carrito = useSelector(store => store.productReducer.carrito)
+
   let user = useSelector(store => store.userReducer.user)
-
-
-
-  if (storage) {
-    carrito = storage;
-  }
-
 
   let message = useSelector(store => store.userReducer.snackbar)
 
@@ -89,44 +77,12 @@ function App() {
   }
 
 
-
-
-
-  const addToCart = async (id) => {
-
-    await dispatch(productActions.agregarCarrito(id))
-    setReload(!reload)
-
-  };
-
-  const removeToCart = async (id, all = false) => {
-
-    if (all) {
-
-      await dispatch(productActions.removerTodoCarrito(id))
-      setReload(!reload)
-
-    } else {
-      await dispatch(productActions.removerCarrito(id))
-      setReload(!reload)
-    }
-
-  };
-
-  const clearCart = async () => {
-
-    await dispatch(productActions.limpiarCarrito())
-    setReload(!reload)
-
-  };
-
-
   return (
     <>
       <Header /> 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/cart" element={<Cart/>}/>
+        <Route path="/cart" element={<Cart props={carrito}/>}/>
         <Route path="/login" element={<LoginSignUp />} />
         <Route path="/about" element={<About />} />
         <Route path="/product/:id" element={<EditarProduct />} />
@@ -137,7 +93,7 @@ function App() {
       </Routes>
 
       <Footer />
-      <ScrollToTop style={{ right: '8px' }}
+      <ScrollToTop style={{ right: '8px'}}
         smooth
         viewBox="0 0 24 24"
         component={<ArrowUpwardIcon />}
@@ -163,37 +119,3 @@ function App() {
 export default App;
 
 
-{/*  <h1>CARRITO DE COMPRAS</h1>
-       <h3>productos</h3>
-       <article className="box grid-responsive">
-        {products && 
-         products.map(item=><div
-         style={{border:'thin solid gray',padding:'1rem'}}
-         key={item._id}>
-          <h3>{item.name}</h3>
-          <h5>USD {item.price}</h5>
-
-          {item.stock<=0 ?<h5 style={{color:'red'}}>Stock acabado</h5>: <h5>Stock: {item.stock}</h5> }
-          
-          <button onClick={()=>addToCart(item._id)}>Agregar</button>
-         </div>)
-        }
-
-       </article>
-       <h3>Carrito</h3>
-       <article className="box">
-        <button onClick={clearCart}>Limpiar Carrito</button>
-        
-
-        {carrito && carrito.map((item,index) =><div
-         style={{border:'thin solid gray',padding:'1rem'}}
-         key={index}>
-          <h3>{item.name}</h3>
-          <h5>USD {item.price*item.__v}</h5>
-          <h6>Cantidad: {item.__v}</h6>  
-          <button onClick={()=>removeToCart(item._id)}>Eliminar uno</button>
-          <button onClick={()=>removeToCart(item._id,true)}>Eliminar todos</button>
-         </div> ) }
-
-       </article>
- */}
