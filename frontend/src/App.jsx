@@ -31,12 +31,18 @@ function App() {
  
      localStorage.setItem('carrito', JSON.stringify(carrito))
 
-    if (localStorage.getItem('token') !== null) {
+   
+
+  }, [carrito]);
+
+  useEffect(()=>{
+
+    if (localStorage.getItem('token') !== null)  {
       const token = localStorage.getItem('token');
       dispatch(userActions.verificarToken(token))
     }
 
-  }, [carrito]);
+  },[])
 
   
 

@@ -18,24 +18,14 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 export default function Cards({ props }) {
 
   const dispatch = useDispatch()
-  const [reload, setReload] = useState(false);
+ 
 
-  useEffect(() => {
+const addToCart = async (id) => {
 
-    dispatch(productActions.getAllProducts())
-    localStorage.setItem('carrito', JSON.stringify(carrito))
+  await dispatch(productActions.agregarCarrito(id))
 
-  }, [reload]);
 
-  let carrito = useSelector(store => store.productReducer.carrito)
-
-  const addToCart = async (id) => {
-
-    console.log(id)
-    await dispatch(productActions.agregarCarrito(id))
-    setReload(!reload);
-
-  };
+};
 
   return (
 
@@ -68,10 +58,10 @@ export default function Cards({ props }) {
               <Button className='vermas' variant="contained" sx={{ color: '#88D317', fontSize: '', backgroundColor: '#6E3667' }}
                 aria-label={`info about ${props.name}`}>Ver mas</Button>
             </LinkRouter>
-            <LinkRouter to={``}>
+            <Button onClick={()=>addToCart(props._id)}>
               <AddShoppingCartIcon sx={{ color: '#88D317', fontSize: 'xx-large' }}>
               </AddShoppingCartIcon>
-            </LinkRouter>
+            </Button>
             </div>
 
           </Stack>

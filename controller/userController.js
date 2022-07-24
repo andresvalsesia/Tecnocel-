@@ -85,6 +85,7 @@ const userController ={
                       const userData={
                         id: user._id,
                         name: user.name,
+                        role:user.role,
                         email:user.email,
                         from:user.from 
                       } 
@@ -109,11 +110,12 @@ const userController ={
 
                      let matchPsw= user.password.filter(pass=>bcryptjs.compareSync(password,pass));
                 
-                     if(matchPsw.length > 0){
+                     if(matchPsw.length > 0){ 
  
                       const userData={
                         id: user._id,
                         name: user.name,
+                        role:user.role,
                         email:user.email,
                         from:user.from 
                        } 
@@ -177,6 +179,7 @@ const userController ={
                         id: req.user.id,
                         name: req.user.name,
                         email:req.user.email,
+                        role:req.role,
                         from:req.user.from 
                        } 
                     res.json({success:true, message:`Welcome again ${req.user.name}`,from:'Token',response:{userData}}) 
