@@ -47,7 +47,6 @@ span,
 
 .login_signUp_toggle {
   display: flex;
-  height: 3vmax;
 }
 
 .login_signUp_toggle>p {
@@ -80,7 +79,7 @@ span,
   flex-direction: column;
   align-items: center;
   margin: auto;
-  padding: 2vmax;
+  /* padding: 2vmax; */
   justify-content: space-evenly;
   height: 70%;
   transition: all 0.5s;
@@ -107,6 +106,7 @@ span,
   border-radius: 4px;
   font: 300 0.9vmax cursive;
   outline: none;
+  color: black
 }
 
 .loginForm>div>svg,
@@ -171,6 +171,7 @@ span,
   border-radius: 4px;
   outline: none;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.219);
+  font-size: 2rem;
 }
 
 .loginBtn:hover,

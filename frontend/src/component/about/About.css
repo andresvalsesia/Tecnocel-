@@ -223,9 +223,6 @@
     .pxz__20{
         margin: 0px 15px;
     }
-    .Header{
-        display: none!important;
-    }
     .speedDial{
         top: 2%;
     }
@@ -300,9 +297,6 @@
     .LoginSignUpContainer{
         background-image: none;
         align-items: unset;
-    }
-    .login_signUp_toggle{
-        padding-top: 5%;
     }
     .nogod__inline{
         margin-bottom: 15vmax;
@@ -381,4 +375,10 @@
     margin-top: -60%;
     z-index: 10;
 }
+}
+
+@media (max-width: 900px) {
+    .col__2 img {
+        height: auto;
+    }
 }

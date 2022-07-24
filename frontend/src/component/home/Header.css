@@ -4,6 +4,10 @@
       animation: sliding 12s linear infinite;
       display: block;
   }
+  .panel{
+    font-size:35px!important;
+    color:#88D317;
+  }
   .inputBox {
     overflow: hidden !important;
   }
@@ -31,3 +35,12 @@
         transform: translateX(130%);
       }
     }
+
+@media (max-width: 1000px) {
+  .inputBox {
+    display: none !important;
+  }
+  .searchBoxHome {
+    display: none;
+  }
+}

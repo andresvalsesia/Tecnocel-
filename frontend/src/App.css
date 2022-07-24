@@ -201,9 +201,6 @@ label.MuiRating-label {
   display: none;
 }
 @media only screen and (max-width: 768px) {
-  .Header{
-    display: none;
-  }
   .dashboard{
     display: none!important;
   }
@@ -236,9 +233,6 @@ label.MuiRating-label {
   }
   span.freeOne {
     display: none !important;
-  }
-  .home__content > div > h2 {
-    display: none!important;
   }
   button.Home__button {
     height: 7vmax!important;

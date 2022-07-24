@@ -26,7 +26,7 @@ export default function ProductDetails() {
         dispatch(productActions.getOneProduct(id))
         // eslint-disable-next-line
     }, []);
-        
+
     let card = useSelector(store => store.productReducer.oneProduct)
   
     const addToCart = async (id) => {
@@ -77,6 +77,6 @@ export default function ProductDetails() {
         } 
         
         </>
-        )
-    ;
+    )
+        ;
 }

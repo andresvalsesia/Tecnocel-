@@ -12,6 +12,8 @@ import InfoIcon from '@mui/icons-material/Info';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import MetaData from "../../component/more/Metadata";
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+
 
 export default function Cards({ props }) {
 
@@ -60,10 +62,18 @@ export default function Cards({ props }) {
         </CardContent>
         <CardActions>
           <Stack direction="row" spacing={2}>
-            <LinkRouter to={`/productDetails/${props._id}`}>
+
+          <div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'2rem'}}>
+          <LinkRouter to={`/productDetails/${props._id}`}>
               <Button className='vermas' variant="contained" sx={{ color: '#88D317', fontSize: '', backgroundColor: '#6E3667' }}
                 aria-label={`info about ${props.name}`}>Ver mas</Button>
             </LinkRouter>
+            <LinkRouter to={``}>
+              <AddShoppingCartIcon sx={{ color: '#88D317', fontSize: 'xx-large' }}>
+              </AddShoppingCartIcon>
+            </LinkRouter>
+            </div>
+
           </Stack>
         </CardActions>
       </Card>

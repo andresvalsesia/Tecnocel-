@@ -42,7 +42,8 @@ function App() {
 
 
   let user = useSelector(store => store.userReducer.user)
-
+  console.log(user)
+ 
   let message = useSelector(store => store.userReducer.snackbar)
 
   if (message.view) {
@@ -82,6 +83,7 @@ function App() {
       <Header /> 
       <Routes>
         <Route path="/" element={<Home />} />
+        {user && user.role=="admin" &&  <Route path="/admin" element={<Admin/>}/>}
         <Route path="/cart" element={<Cart props={carrito}/>}/>
         <Route path="/login" element={<LoginSignUp />} />
         <Route path="/about" element={<About />} />
