@@ -14,7 +14,7 @@
    border-radius: 0.5rem;
    padding: 1.2rem 1.5rem;
    font-size: 1.7rem;
-   margin: 1rem 0;
+   margin: 0rem 0;
    background: transparent !important;
    text-transform: none;
    box-shadow: 0 0 7px #88D317;
@@ -50,6 +50,12 @@ input{
    box-shadow: 0 0 7px #88D317;
    color: white;
    cursor: pointer;
+}
+.volver-btn:hover {
+   background-color: #88D317 !important;
+   color: black;
+   border: solid 1px black;
+   box-shadow: 0 0 10px black;
 }
 .volver-container {
    display: flex;
@@ -130,7 +136,7 @@ form, .fromulario {
 }
 
 .container{
-  width: 80vw;
+  width: 90vw;
    padding:2rem;
    margin:0 auto;
    color: white;
@@ -140,7 +146,7 @@ form, .fromulario {
    box-shadow: 0 0 30px #88D317;
    background-color: rgba(0, 0, 0, 0.745);
    display: flex;
-   flex-direction: column;
+   flex-direction: row;
 }
 
 
@@ -161,7 +167,7 @@ thead, tr{
 }
 
 .admin-product-form-container form{
-   max-width: 50rem;
+   max-width: 380px;
    margin:0 auto;
    padding:2rem;
    border-radius: .5rem;
@@ -186,12 +192,9 @@ thead, tr{
    text-transform: none;
 }
 
-.product-display{
-   margin:2rem 0;
-}
 
 .product-display .product-display-table{
-   width: 100%;
+   width: 700px;
    text-align: center;
 }
 
@@ -224,8 +227,8 @@ thead, tr{
 }
 
 .img-product{
-    height:150px;
-    width:200px;
+    height:110px;
+    width:150px;
     object-fit: cover;
     border: solid  rgba(0, 70, 248, 0.816) 2px;
     border-radius: 5%;
@@ -233,6 +236,80 @@ thead, tr{
     -webkit-box-shadow: 0 0 6px #88D317;
     box-shadow: 0 0 30px blue;
 }
+/* From uiverse.io */
+.btn-edit {
+   width: 100px !important;
+   height: 26px !important;
+   cursor: pointer;
+   display: flex;
+   align-items: center;
+   background: rgba(28, 200, 74, 0.672) !important;
+   border: none;
+   border-radius: 5px;
+   box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+   
+}
+.btn-delete {
+   width: 100px !important;
+   height: 26px !important;
+   cursor: pointer;
+   display: flex;
+   align-items: center;
+   background: red;
+   border: none;
+   border-radius: 5px;
+   box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+   background: #e62222;
+  }
+  
+  button, button span {
+   transition: 200ms;
+  }
+  
+  button .text {
+   transform: translateX(17px);
+   color: white;
+   font-weight: bold;
+   font-size: 15px;
+  }
+  
+  button .icon {
+   position: absolute;
+   /* border-left: 1px solid #c41b1b; */
+   transform: translateX(75px);
+   height: 30px;
+   width: 30px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+  }
+  
+  button svg {
+   width: 15px;
+   fill: #eee;
+  }
+  
+  button:hover {
+   background: red;
+  }
+  
+  button:hover .text {
+   color: transparent;
+  }
+  
+  button:hover .icon {
+   width: 150px;
+   border-left: none;
+   transform: translateX(0);
+  }
+  
+  button:focus {
+   outline: none;
+  }
+  
+  button:active .icon svg {
+   transform: scale(0.8);
+  }
 
 @media (max-width:1920px){
 
@@ -253,10 +330,13 @@ thead, tr{
 }
 
 @media (max-width:1440px){
-
-   html{
-      font-size: 55%;
+   .product-display .product-display-table{
+      width: 600px;
    }
+   .fromulario {
+      width: 350px;
+   }
+ 
    button, .btn{
       width: 130px;
       font-size: 20px;
@@ -267,11 +347,72 @@ thead, tr{
       margin: 5px;
    }
 }
-@media (max-width:991px){
 
-   html{
-      font-size: 55%;
+@media (max-width:1233px){
+   .product-display .product-display-table{
+      width: 550px;
    }
+   .fromulario {
+      width: 320px;
+   }
+   .container{
+      width: 90% !important;
+   }
+}
+
+@media (max-width:1010px){
+   .product-display .product-display-table{
+      width: 500px;
+   }
+   .fromulario {
+      width: 280px;
+   }
+   .container{
+      width: 95% !important;
+   }
+   td {
+      font-size: 12px!important;
+   }
+   .search {
+      width: 350px;
+   }
+   .img-product{
+      width: 110px;
+      height: 90px;
+   }
+
+   button, .btn{
+      width: 130px;
+      font-size: 20px;
+      height: 40px;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      margin: 5px;
+
+   }
+}
+@media (max-width:905px){
+   .product-display .product-display-table{
+      width: 450px;
+   }
+   .fromulario {
+      width: 250px;
+   }
+   .container{
+      width: 100% !important;
+   }
+   td {
+      font-size: 12px!important;
+   }
+   .search {
+      width: 350px;
+   }
+   .img-product{
+      width: 110px;
+      height: 90px;
+   }
+
    button, .btn{
       width: 130px;
       font-size: 20px;
@@ -293,7 +434,7 @@ thead, tr{
       width: 80rem;
    }
 }
-@media (max-width:768px){
+@media (max-width:869px){
 
    .product-display{
       overflow-y:scroll;
@@ -311,6 +452,9 @@ thead, tr{
    }
    .container {
       width: 100vw !important;
+   }
+   .fromulario {
+      width: 380px !important;
    }
 }
 @media (max-width:625px){
