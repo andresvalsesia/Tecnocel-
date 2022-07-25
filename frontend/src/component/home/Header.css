@@ -7,6 +7,10 @@
     flex-direction: column;
     align-items: center;
     width: 13rem;
+    background-color: #121212;
+}
+.css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper {
+  background-color: transparent !important;
 }
 .menu-despleg{
   background-color: rgba(255, 255, 255, 0.253);
