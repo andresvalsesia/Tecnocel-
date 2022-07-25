@@ -20,7 +20,7 @@ function Products(props) {
 
     // const product = useSelector(store => store.productReducer.filter)
     const products = useSelector(store => store.productReducer.products)
-    
+    console.log(products)
     let filter= products.filter(product=>product.name.toLowerCase().startsWith(search.trim().toLocaleLowerCase()))
    
   
