@@ -1,41 +1,41 @@
-const nodemailer=require('nodemailer');
-const {google}=require('googleapis');
-const OAuth2=google.auth.OAuth2
+const nodemailer = require('nodemailer');
+const { google } = require('googleapis');
+const OAuth2 = google.auth.OAuth2
 
 
 
-const sendVerification= async (email,string)=>{
-     
-     const myOAuth2Client=new OAuth2(
-        process.env.GOOGLE_CLIENTID,
-        process.env.GOOGLE_CLIENTSECRET,
-        "https://developers.google.com/oauthplayground"
-     )
-      
-      myOAuth2Client.setCredentials({refresh_token:process.env.GOOGLE_REFRESHTOKEN})
+const sendVerification = async (email, string) => {
 
-      const accessToken=myOAuth2Client.getAccessToken()
+  const myOAuth2Client = new OAuth2(
+    process.env.GOOGLE_CLIENTID,
+    process.env.GOOGLE_CLIENTSECRET,
+    "https://developers.google.com/oauthplayground"
+  )
 
-      const transporter=nodemailer.createTransport({
-         service:"gmail",
-         auth:{
-             user:'tecnocelcba.oficial@gmail.com',
-             type:"OAuth2",
-             clientId:process.env.GOOGLE_CLIENTID,
-             clientSecret: process.env.GOOGLE_CLIENTSECRET,
-             refreshToken: process.env.GOOGLE_REFRESHTOKEN,
-             accessToken:accessToken
-         },
-         tls:{
-            rejectUnauthorized: false
-         }
-      })
+  myOAuth2Client.setCredentials({ refresh_token: process.env.GOOGLE_REFRESHTOKEN })
 
-      let mailOptions = {
-         from:'tecnocelcba.oficial@gmail.com',
-         to:email,
-         subject: 'verify account',
-         html: `<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  const accessToken = myOAuth2Client.getAccessToken()
+
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: 'tecnocelcba.oficial@gmail.com',
+      type: "OAuth2",
+      clientId: process.env.GOOGLE_CLIENTID,
+      clientSecret: process.env.GOOGLE_CLIENTSECRET,
+      refreshToken: process.env.GOOGLE_REFRESHTOKEN,
+      accessToken: accessToken
+    },
+    tls: {
+      rejectUnauthorized: false
+    }
+  })
+
+  let mailOptions = {
+    from: 'tecnocelcba.oficial@gmail.com',
+    to: email,
+    subject: 'verify account',
+    html: `<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
          <html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
          <head>
          <!--[if gte mso 9]>
@@ -202,7 +202,7 @@ const sendVerification= async (email,string)=>{
                  
          <div align="center">
            <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;font-family:arial,helvetica,sans-serif;"><tr><td style="font-family:arial,helvetica,sans-serif;" align="center"><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://unlayer.com" style="height:39px; v-text-anchor:middle; width:174px;" arcsize="77%" stroke="f" fillcolor="#13b105"><w:anchorlock/><center style="color:#FFFFFF;font-family:arial,helvetica,sans-serif;"><![endif]-->
-             <a href="http://localhost:4000/api/verify/${string}" target="_blank" style="box-sizing: border-box;display: inline-block;font-family:arial,helvetica,sans-serif;text-decoration: none;-webkit-text-size-adjust: none;text-align: center;color: #FFFFFF; background-color: #13b105; border-radius: 30px;-webkit-border-radius: 30px; -moz-border-radius: 30px; width:auto; max-width:100%; overflow-wrap: break-word; word-break: break-word; word-wrap:break-word; mso-border-alt: none;">
+             <a href="https://tecnocel.herokuapp.com/api/verify/${string}" target="_blank" style="box-sizing: border-box;display: inline-block;font-family:arial,helvetica,sans-serif;text-decoration: none;-webkit-text-size-adjust: none;text-align: center;color: #FFFFFF; background-color: #13b105; border-radius: 30px;-webkit-border-radius: 30px; -moz-border-radius: 30px; width:auto; max-width:100%; overflow-wrap: break-word; word-break: break-word; word-wrap:break-word; mso-border-alt: none;">
                <span class="v-padding" style="display:block;padding:10px 20px;line-height:120%;"><strong><span style="font-size: 16px; line-height: 19.2px;">Clic para verificar</span></strong></span>
              </a>
            <!--[if mso]></center></v:roundrect></td></tr></table><![endif]-->
@@ -322,17 +322,17 @@ const sendVerification= async (email,string)=>{
          </body>
          
          </html>`
-                          
-      }
 
-      await transporter.sendMail(mailOptions, function(error,response){
-          if (error) {
-             console.log(error);
-          }
-           else{
-            console.log(`check ${email} to confirm your account`)
-           } 
-      })
+  }
+
+  await transporter.sendMail(mailOptions, function (error, response) {
+    if (error) {
+      console.log(error);
+    }
+    else {
+      console.log(`check ${email} to confirm your account`)
+    }
+  })
 }
 
-module.exports=sendVerification
+module.exports = sendVerification
