@@ -1,4 +1,22 @@
-
+.Linkrouter{
+  color:white;
+  font-size: 1.8rem;
+}
+.css-6hp17o-MuiList-root-MuiMenu-list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 13rem;
+}
+.menu-despleg{
+  background-color: rgba(255, 255, 255, 0.253);
+  height: 3rem !important;
+  width: 3rem !important;
+}
+.Linkrouter-short{
+  color: #88D317;
+  font-size: 1.8rem
+}
   .inputBox > span{
       font-family: "Roboto";
       animation: sliding 12s linear infinite;
@@ -42,5 +60,10 @@
   }
   .searchBoxHome {
     display: none;
+  }
+}
+@media(max-width:550px){
+  .email-header{
+    display: none !important;
   }
 }
