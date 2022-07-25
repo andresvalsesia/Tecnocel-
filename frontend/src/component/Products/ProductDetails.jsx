@@ -52,21 +52,23 @@ export default function ProductDetails() {
                     alt={card?.name}
                 />
                 <CardContent className='infodetalles' >
-                    <Typography style={{color: "#88D317", fontSize:'large'}} gutterBottom variant="h5" component="div">
+                    <Typography style={{color: "white", fontSize:'large', textAlign: 'center' }} gutterBottom variant="h5" component="div">
                         {card?.name}
                         
                     </Typography>
-                    <p style={{color: "#88D317", fontSize: 'medium' }}>{card?.description},{card?.brand},{card?.color},{card?.sizeTv},{card?.RAM},{card?.stock},{card?.system},{card?.disc},{card?.processor},</p>
-                    <p style={{color: "#88D317", fontSize: 'medium' }}>Marca: {card?.brand}, Color: {card?.color}, Pulgadas de pantalla: {card?.sizeTv}, Memoria ram: {card?.RAM}, Sistema operativo: {card?.system}, Disco: {card?.disc}, Prpcesador: {card?.processor}</p>
-                    <p style={{color: "#88D317", fontSize: 'medium' }}>Precio: USD{card?.price}, Stock: {card?.stock}</p>
+                    <p style={{color: "#88D317", fontSize: 'medium',textAlign: 'center' }}>{card?.description},{card?.brand},{card?.color},{card?.sizeTv},{card?.RAM},{card?.stock},{card?.system},{card?.disc},{card?.processor},</p>
+                    <p style={{color: "#88D317", fontSize: 'medium', textAlign: 'center'  }}>Marca: {card?.brand}, Color: {card?.color}, Pulgadas de pantalla: {card?.sizeTv}, Memoria ram: {card?.RAM}, Sistema operativo: {card?.system}, Disco: {card?.disc}, Prpcesador: {card?.processor}</p>
+                    <p style={{color: "white", fontSize: 'medium', textAlign: 'center'  }}>Precio: USD: {card?.price}, Stock: {card?.stock}</p>
                </CardContent>
                <CardActions>
-               <Stack direction="row" spacing={2}>
+                <div  className='stackDetail' >
+               <Stack direction="row" spacing={2} className='stackDetail' >
                 <Button onClick={()=>{addToCart(card._id)}}>
                 <AddShoppingCartIcon sx={{ color: '#88D317', fontSize: 'xx-large' }}>
                 </AddShoppingCartIcon> 
                </Button>
                </Stack>
+               </div>
               </CardActions>
             </CardActionArea>
         </Card>
