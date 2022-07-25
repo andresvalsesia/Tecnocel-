@@ -93,26 +93,26 @@ console.log(carrito.length)
                     <img src={item.images} alt="" height="90rem" width="90rem"></img>
                     <h3>{item.name}</h3>
                     </div>
-                    <p style={{fontWeight: "bold", fontSize: "16px"}}>{item.price}</p>
+                    <p style={{fontWeight: "bold", fontSize: "16px"}}>$ {item.price}</p>
                     <div className="cantidad">
-                  <Button onClick={()=>removeToCart(item._id)}> <RemoveIcon style={{color: "#88D317", cursor: "pointer", fontSize: "2.3rem"}}/></Button>
+                  <button className="button-cart" onClick={()=>removeToCart(item._id)}> <RemoveIcon style={{color: "#88D317", cursor: "pointer", fontSize: "2.3rem"}}/></button>
                     <p style={{fontWeight: "bold"}}>{item.__v}</p>
-                   <Button onClick={()=>addToCart(item._id)}><AddIcon style={{color: "#88D317", cursor: "pointer", fontSize: "2.3rem"}}/></Button>
+                   <button className="button-cart" onClick={()=>addToCart(item._id)}><AddIcon style={{color: "#88D317", cursor: "pointer", fontSize: "2.3rem"}}/></button>
                     </div>
-                    <h5>{item.price*item.__v}</h5>
-                 <Button onClick={()=>removeToCart(item._id,true)}><DeleteIcon style={{color: "#88D317", cursor: "pointer", fontSize: "2.3rem"}} /></Button>
+                    <h5>$ {item.price*item.__v}</h5>
+                 <button className="button-cart" onClick={()=>removeToCart(item._id,true)}><DeleteIcon style={{color: "#88D317", cursor: "pointer", fontSize: "2.3rem"}} /></button>
                   </div>
                 
                 
                 ):<EmptyCart/>}
 
 
-                <button onClick={clearCart} className="vaciar-carrito" style={carrito.length !== 0 ? { display:'block'} : {display : 'none'}}> <DeleteIcon style={{color: "#88D317", cursor: "pointer", fontSize: "2.3rem"}} />Vaciar Carrito</button>
+                <button onClick={clearCart} className="vaciar-carrito" style={carrito.length !== 0 ? { display:'flex', backgroundColor: 'transparent', border: 'none', justifyContent: 'center'} : {display : 'none'}}> <DeleteIcon style={{color: "#88D317", cursor: "pointer", fontSize: "2.3rem"}} />Vaciar Carrito</button>
             </div>
             <div className="box-resumen" style={carrito.length !== 0 ? { display:'block'} : {display : 'none'}}>
               <h4>Resumen de compra</h4>
               <div className="total-link">
-                <p>Total: {total}</p>
+                <p>Total: ${total}</p>
                 
                 <button className="button-compra">
                   Iniciar Compra
