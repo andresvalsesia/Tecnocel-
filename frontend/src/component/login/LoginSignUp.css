@@ -25,8 +25,8 @@ span,
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  background-color: grey;
-  background-image: url(https://www.wallpaperuse.com/wallp/8-83446_m.jpg);
+  background-color: transparent;
+  /* background-image: url(https://www.wallpaperuse.com/wallp/8-83446_m.jpg); */
   top: 0%;
   left: 0;
 }

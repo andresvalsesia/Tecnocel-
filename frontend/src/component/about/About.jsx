@@ -22,7 +22,7 @@ const About = () => {
         {/* 1st verse */}
         <div className="row flex">
           <div className="col__2">
-            <img src="https://cdn.pocket-lint.com/r/s/660x/assets/images/158557-phones-news-feature-letsgodigital-renders-image3-sr7b0puivr-jpg.webp" />
+            <img src="https://cdn.pocket-lint.com/r/s/660x/assets/images/158557-phones-news-feature-letsgodigital-renders-image3-sr7b0puivr-jpg.webp" alt='' />
           </div>
           <div className="col__2">
             <div className="meta">

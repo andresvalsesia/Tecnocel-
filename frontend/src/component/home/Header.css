@@ -7,7 +7,7 @@
     flex-direction: column;
     align-items: center;
     width: 13rem;
-    background-color: #121212;
+    background-color: rgb(18, 18, 18);
 }
 .css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper {
   background-color: transparent !important;
@@ -34,11 +34,13 @@
     overflow: hidden !important;
   }
   .Header__topbar{
-    background-color:#1A0315;
+    background-color:rgb(18, 18, 18);
+    padding: 2rem
   }
   .navbar{
-    background-color:#1A0315;
-    margin:0 !important;
+    background-color:rgb(18, 18, 18);
+    padding: 2rem!important;
+    
   }
   .buttonnav{
   -moz-box-shadow: 0 0 6px   #88D317;
@@ -46,7 +48,7 @@
   box-shadow: 0 0 30px #88D317;
   margin-left:1rem;
   color: #88D317;
-  border-radius: 0.2rem;
+  border-radius: 2rem;
   font-size:2rem;
   }
   @keyframes sliding{

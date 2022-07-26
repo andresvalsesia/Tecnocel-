@@ -24,7 +24,7 @@ const Contact = () => {
         >
 
           <div className="content">
-            <h2>CONTACTANOS!!</h2>
+            <h2>CONTÁCTANOS!!</h2>
             <p className="slogan">TECNOCEL, Conectamos tu mundo...</p>
           </div>
           <div
