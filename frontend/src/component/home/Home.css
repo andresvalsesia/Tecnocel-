@@ -27,7 +27,7 @@
     z-index: 10;
   }
   
-  .homeHeading {
+  /* .homeHeading {
     text-align: center;
     border-bottom: 1px solid rgba(21, 21, 21, 0.5);
     width: 20vmax;
@@ -35,7 +35,7 @@
     font-size: 1.4vmax;
     margin: 5vmax auto;
     color: rgb(0, 0, 0, 0.7);
-  }
+  } */
   .container {
     display: flex;
     margin: 2vmax auto;
@@ -49,7 +49,9 @@
     text-decoration: line-through;
     padding-left: 10px;
   }
-  .ProductCard {
+
+ 
+  /* .ProductCard {
     width: 14vmax;
     height: 22vmax;
     display: flex;
@@ -59,7 +61,7 @@
     margin: 2vmax;
     transition: all 0.5s;
     padding-bottom: 0.5vmax;
-  }
+  } */
   img.ProductImg {
     width: 14vmax;
   }
@@ -79,11 +81,11 @@
     color: #000;
     margin-bottom: 0;
   }
-  
+/*   
   .ProductCard:hover {
     box-shadow: 0 0 5px rgba(15, 15, 15, 0.26);
     transform: translateY(-1vmax);
-  }
+  } */
   @media screen and (max-width: 600px) {
     .ProductCard > p {
       font-size: 1.7vmax;
@@ -111,7 +113,7 @@
     height: 100vh;
     object-fit: cover;
   }
-  .home__content {
+  /* .home__content {
     position: absolute !important;
     top: 0;
     bottom: 0;
@@ -126,15 +128,15 @@
   .home__content h2 {
     text-decoration: none;
     
-  }
-  button.Home__button {
+  } */
+  /* button.Home__button {
     padding: 15px 20px;
     background-color: tomato;
     border: none;
     cursor: pointer;
     color: #fff;
-  }
-  .homeHeading {
+  } */
+  /* .homeHeading {
     text-align: center;
     border-bottom: 1px solid rgba(21, 21, 21, 0.5);
     width: 20vmax;
@@ -142,7 +144,7 @@
     font-size: 1.4vmax;
     margin: 5vmax auto;
     color: rgb(0, 0, 0, 0.7);
-  }
+  } */
   .container {
     display: flex;
     margin: 2vmax auto;
@@ -151,7 +153,7 @@
     justify-content: center;
     max-width: 100%;
   }
-  .ProductCard {
+  /* .ProductCard {
     width: 14vmax;
     display: flex;
     flex-direction: column;
@@ -181,17 +183,17 @@
     margin: 1vmax 0.5vmax;
     color: #000;
     margin-bottom: 0;
-  }
-  .ProductCard > span {
+  } */
+  /* .ProductCard > span {
     margin: 0.5vmax;
     color: tomato;
     font-family: "Frankin Gothic Medium", "Arrial Narrow", Arial, sans-serif;
     font-size: 1vmax;
-  }
-  .ProductCard:hover {
+  } */
+  /* .ProductCard:hover {
     box-shadow: 0 0 5px rgba(15, 15, 15, 0.26);
     transform: translateY(-1vmax);
-  }
+  } */
   @media screen and (max-width: 600px) {
     .ProductCard > p {
       font-size: 1.7vmax;

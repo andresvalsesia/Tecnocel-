@@ -7,6 +7,15 @@
 body{
   font-family: "Poppins,sans-serif";
 }
+
+body::-webkit-scrollbar {
+	width: 7px;
+}
+
+body::-webkit-scrollbar-thumb {
+	background: #88D317;
+}
+
 Chrome, Safari, Edge, Opera
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -87,9 +96,6 @@ strong{
   transition: .4s all ease;
   cursor: pointer;
 }
-strong:hover{
-  color: tomato;
-}
 h6{
   font-weight: 600;
   opacity: .7;
@@ -150,6 +156,14 @@ label.MuiFormControlLabel-root {
   border: none;
 }
 
+.MuiSvgIcon-root {
+  
+  width: 3.5rem!important;
+  height: 3.5rem!important;
+  margin-left:5px;
+  margin-top: 4px;
+} 
+
 label.MuiFormLabel-root.MuiInputLabel-root.MuiInputLabel-formControl.MuiInputLabel-animated {
   animation: none;
   border: none;
@@ -187,9 +201,7 @@ label.MuiRating-label {
   width: unset;
   height: unset;
 }
-.MuiRating-root{
-  color: tomato!important;
-}
+
 .MuiRating-root{
   font-size: 1.2rem!important;
 }
@@ -206,6 +218,14 @@ label.MuiRating-label {
 .Carousel-indicators-15  {
   display: none;
 }
+.Toastify__toast{
+  font-size: 1.5rem;
+}
+
+.Toastify__close-button{
+  width: 1rem;
+}
+
 @media only screen and (max-width: 768px) {
   .dashboard{
     display: none!important;
