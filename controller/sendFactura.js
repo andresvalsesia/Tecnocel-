@@ -4,7 +4,11 @@ const OAuth2 = google.auth.OAuth2
 
 
 
-const sendVerification = async (email, string) => {
+const sendFactura= async (email,carrito) => {
+
+  let subtotal = carrito.map((item) => item.price * item.__v) 
+
+  let total = subtotal.reduce((sum, a) => sum + a, 0)
 
   const myOAuth2Client = new OAuth2(
     process.env.GOOGLE_CLIENTID,
@@ -34,7 +38,7 @@ const sendVerification = async (email, string) => {
   let mailOptions = {
     from: 'tecnocelcba.oficial@gmail.com',
     to: email,
-    subject: 'verify account',
+    subject: 'Resumen de compra',
     html: `<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
     <html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
     <head>
@@ -106,6 +110,10 @@ const sendVerification = async (email, string) => {
     
       .no-stack .u-col-50 {
         width: 50% !important;
+      }
+    
+      .no-stack .u-col-100 {
+        width: 100% !important;
       }
     
     }
@@ -418,8 +426,8 @@ const sendVerification = async (email, string) => {
         <div style="border-collapse: collapse;display: table;width: 100%;height: 100%;background-color: transparent;">
           <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding: 0px;background-image: url('https://assets.unlayer.com/projects/91419/1658515560554-11161.png');background-repeat: no-repeat;background-position: center top;background-color: transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:600px;"><tr style="background-color: transparent;"><![endif]-->
           
-    <!--[if (mso)|(IE)]><td align="center" width="300" style="background-color: #001b01;width: 300px;padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;" valign="top"><![endif]-->
-    <div class="u-col u-col-50" style="max-width: 320px;min-width: 300px;display: table-cell;vertical-align: top;">
+    <!--[if (mso)|(IE)]><td align="center" width="600" style="background-color: #001b01;width: 600px;padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;" valign="top"><![endif]-->
+    <div class="u-col u-col-100" style="max-width: 320px;min-width: 600px;display: table-cell;vertical-align: top;">
       <div style="background-color: #001b01;height: 100%;width: 100% !important;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;">
       <!--[if (!mso)&(!IE)]><!--><div style="padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;"><!--<![endif]-->
       
@@ -428,105 +436,27 @@ const sendVerification = async (email, string) => {
         <tr>
           <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:'Montserrat',sans-serif;" align="left">
             
-    <table width="100%" cellpadding="0" cellspacing="0" border="0">
-      <tr>
-        <td style="padding-right: 0px;padding-left: 0px;" align="center">
-          
-          <img align="center" border="0" src="https://cdn.templates.unlayer.com/assets/1650578523701-Laptop.png" alt="Laptop" title="Laptop" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 92%;max-width: 257.6px;" width="257.6" class="v-src-width v-src-max-width"/>
-          
-        </td>
-      </tr>
-    </table>
-    
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    
-    <table style="font-family:'Montserrat',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
-      <tbody>
-        <tr>
-          <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:8px 10px 0px;font-family:'Montserrat',sans-serif;" align="left">
-            
-      <h1 style="margin: 0px; color: #ffffff; line-height: 140%; text-align: center; word-wrap: break-word; font-weight: normal; font-family: 'Montserrat',sans-serif; font-size: 18px;">
-        <strong>MacBook Air MGN63</strong>
-      </h1>
-    
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    
-    <table style="font-family:'Montserrat',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
-      <tbody>
-        <tr>
-          <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:10px 10px 12px;font-family:'Montserrat',sans-serif;" align="left">
-            
-      <h1 style="margin: 0px; color: #c4c9ce; line-height: 140%; text-align: center; word-wrap: break-word; font-weight: normal; font-family: 'Montserrat',sans-serif; font-size: 16px;">
-        <strong>$ 1086.00</strong>
-      </h1>
-    
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    
-      <!--[if (!mso)&(!IE)]><!--></div><!--<![endif]-->
-      </div>
-    </div>
-    <!--[if (mso)|(IE)]></td><![endif]-->
-    <!--[if (mso)|(IE)]><td align="center" width="300" style="background-color: #001b01;width: 300px;padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;" valign="top"><![endif]-->
-    <div class="u-col u-col-50" style="max-width: 320px;min-width: 300px;display: table-cell;vertical-align: top;">
-      <div style="background-color: #001b01;height: 100%;width: 100% !important;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;">
-      <!--[if (!mso)&(!IE)]><!--><div style="padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;"><!--<![endif]-->
+   
       
-    <table style="font-family:'Montserrat',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
-      <tbody>
-        <tr>
-          <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:10px 10px 11px;font-family:'Montserrat',sans-serif;" align="left">
-            
-    <table width="100%" cellpadding="0" cellspacing="0" border="0">
-      <tr>
-        <td style="padding-right: 0px;padding-left: 0px;" align="center">
+      ${carrito.map(item=>`<table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 0px;padding-left: 0px;" align="center">
           
-          <img align="center" border="0" src="https://cdn.templates.unlayer.com/assets/1650578862024-Headphone.png" alt="Headphones" title="Headphones" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 53%;max-width: 148.4px;" width="148.4" class="v-src-width v-src-max-width"/>
-          
-        </td>
-      </tr>
-    </table>
+      <img align="center" border="0" src=${item.images} alt="Laptop" title="Laptop" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 30%;max-width: 174px;" width="174" class="v-src-width v-src-max-width"/>
+      <h1 style="margin: 0px; color: #ffffff; line-height: 140%; text-align: center; word-wrap: break-word; font-weight: normal; font-family: 'Montserrat',sans-serif; font-size: 16px;">
+      <strong>${item.name}</strong>
+       </h1>
+       <h1 style="margin: 0px; color: #c4c9ce; line-height: 140%; text-align: center; word-wrap: break-word; font-weight: normal; font-family: 'Montserrat',sans-serif; font-size: 16px;">
+      <strong>USD ${item.price} X ${item.__v}</strong>
+      </h1> 
+    </td>
+  </tr></table>`)}
+        
+    
     
           </td>
         </tr>
       </tbody>
     </table>
     
-    <table style="font-family:'Montserrat',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
-      <tbody>
-        <tr>
-          <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:10px 10px 0px;font-family:'Montserrat',sans-serif;" align="left">
-            
-      <h1 style="margin: 0px; color: #ffffff; line-height: 140%; text-align: center; word-wrap: break-word; font-weight: normal; font-family: 'Montserrat',sans-serif; font-size: 18px;">
-        <strong>ZX110 Headphone</strong>
-      </h1>
-    
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    
-    <table style="font-family:'Montserrat',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
-      <tbody>
-        <tr>
-          <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:'Montserrat',sans-serif;" align="left">
-            
-      <h1 style="margin: 0px; color: #c4c9ce; line-height: 140%; text-align: center; word-wrap: break-word; font-weight: normal; font-family: 'Montserrat',sans-serif; font-size: 16px;">
-        <strong>$ 280.00</strong>
-      </h1>
-    
-          </td>
-        </tr>
-      </tbody>
-    </table>
     
       <!--[if (!mso)&(!IE)]><!--></div><!--<![endif]-->
       </div>
@@ -555,7 +485,7 @@ const sendVerification = async (email, string) => {
           <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:15px 10px;font-family:'Montserrat',sans-serif;" align="left">
             
       <h1 style="margin: 0px; color: #000000; line-height: 140%; text-align: center; word-wrap: break-word; font-weight: normal; font-family: 'Montserrat',sans-serif; font-size: 18px;">
-        <strong>Total </strong>(2 elementos)
+        <strong>TOTAL: </strong>
       </h1>
     
           </td>
@@ -578,7 +508,7 @@ const sendVerification = async (email, string) => {
           <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:15px 10px;font-family:'Montserrat',sans-serif;" align="left">
             
       <h1 style="margin: 0px; color: #000000; line-height: 140%; text-align: center; word-wrap: break-word; font-weight: normal; font-family: 'Montserrat',sans-serif; font-size: 18px;">
-        <strong>$ 1386.00</strong>
+        <strong>USD ${total}</strong>
       </h1>
     
           </td>
@@ -847,4 +777,4 @@ const sendVerification = async (email, string) => {
   })
 }
 
-module.exports = sendVerification
+module.exports = sendFactura;

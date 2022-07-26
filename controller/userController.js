@@ -2,6 +2,7 @@ const User=require('../model/user');
 const bcryptjs=require('bcryptjs');
 var crypto = require('crypto');
 const sendEmail=require('./sendMail');
+const sendFactura=require('./sendFactura');
 const jwt=require('jsonwebtoken');
 
 const userController ={
@@ -204,6 +205,24 @@ const userController ={
                      success:error?false :true,
                      error:error
                     })
+           },
+
+           enviarFactura: async (req,res)=>{
+               let email=req.params.email
+               let {carrito}=req.body
+               console.log(carrito)
+               let error=null;
+               try{
+                   sendFactura(email,carrito)
+               }
+               catch(err){error=err}
+
+               res.json({
+                  response:error? 'error': "Su resumen fue envidado con exito",
+                  success:error?false :true,
+                  error:error
+                 })
+
            }
            
 }

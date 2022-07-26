@@ -32,6 +32,13 @@ const userActions={
                  dispatch({type:'SIGN_IN', payload: null});
                }
          },
+
+         signOutUser:() =>{
+            return async(dispatch,getState) =>{
+              localStorage.removeItem('token')
+              dispatch({type:'SIGN_IN', payload: null});
+            }
+      },
         
          verificarToken:(token)=>{
 
@@ -56,6 +63,14 @@ const userActions={
                                 }
                              })
                    }
+         },
+
+         enviarBoleta:(email,carrito)=>{
+               return async(dispatch,getState) =>{
+                const res= await axios.post(`${apiUrl}boleta/${email}`,{carrito})
+               
+              }
+
          }
 
      

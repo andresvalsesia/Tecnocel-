@@ -47,8 +47,7 @@ const addToCart = async (id) => {
           <Typography fontSize={"medium"} gutterBottom variant="h5" component="div" color="white"  sx={{textAlign:'center'}} > 
             {props.name}
           </Typography>
-          <Typography fontSize={"medium"} variant="body2" color="#88D317"  sx={{textAlign:'center'}}  >usd:
-            {props.price}
+          <Typography   color="#88D317"  sx={{textAlign:'center',fontSize:'25px!important'}}  >USD: {props.price}
           </Typography>
         </CardContent>
         <CardActions>
