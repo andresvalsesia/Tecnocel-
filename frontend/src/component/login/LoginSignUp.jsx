@@ -12,8 +12,8 @@ import Loader from "../more/Loader";
 import MetaData from "../more/Metadata";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+/* import GoogleSignUp from '../login/GoogleSignUp' */
 import GoogleSignIn from '../login/GoogleSignIn'
-import GoogleSignUp from '../login/GoogleSignUp'
 
 const LoginSignup = () => {
 
@@ -140,6 +140,7 @@ const LoginSignup = () => {
                 </div>
                 <Link  to="/password/forgot">¿Has olvidado tu contraseña ?</Link>
                 <input type="submit" value="Iniciar" className="loginBtn" />
+                <GoogleSignIn/>
                 
                 <Link to="/">
                   <span className="volver-inicio">Volver a página de Inicio</span>
@@ -196,7 +197,7 @@ const LoginSignup = () => {
                   />
                 </div>
                 <input type="submit" value="Registrarse" className="signUpBtn" />
-                <GoogleSignIn/> 
+                 
                 <Link to="/">
                   <span className="volver-inicio">Volver a pagina de Inicio</span>
                 </Link>
