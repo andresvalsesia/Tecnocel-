@@ -13,6 +13,7 @@ import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import MetaData from "../../component/more/Metadata";
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import { padding } from '@mui/system';
 
 
 export default function Cards({ props }) {
@@ -43,23 +44,25 @@ const addToCart = async (id) => {
           height="140"
         />
         <CardContent  >
-          <Typography fontSize={"medium"} gutterBottom variant="h5" component="div">
+          <Typography fontSize={"medium"} gutterBottom variant="h5" component="div" color="white"  sx={{textAlign:'center'}} > 
             {props.name}
           </Typography>
-          <Typography fontSize={"medium"} variant="body2" color="#88D317">u$d:
+          <Typography fontSize={"medium"} variant="body2" color="#88D317"  sx={{textAlign:'center'}}  >usd:
             {props.price}
           </Typography>
         </CardContent>
         <CardActions>
-          <Stack direction="row" spacing={2}>
+          <Stack  className='stack' direction="column" spacing={2}>
 
-          <div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'2rem'}}>
+          <div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'2rem', padding:'1rem'} }>
           <LinkRouter to={`/productDetails/${props._id}`}>
-              <Button className='vermas' variant="contained" sx={{ color: '#88D317', fontSize: '', backgroundColor: '#6E3667' }}
+              <Button className='vermas' variant="contained" sx={{ color: '#88D317', fontSize: '', backgroundColor: '#6E3667', }}
                 aria-label={`info about ${props.name}`}>Ver mas</Button>
             </LinkRouter>
+            </div>
+            <div className='carrito' >
             <Button onClick={()=>addToCart(props._id)}>
-              <AddShoppingCartIcon sx={{ color: '#88D317', fontSize: 'xx-large' }}>
+              <AddShoppingCartIcon sx={{ color: '#88D317', fontSize: 'xx-large', }}>
               </AddShoppingCartIcon>
             </Button>
             </div>

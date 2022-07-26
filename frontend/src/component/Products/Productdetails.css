@@ -4,6 +4,9 @@
 .carrito{
   padding: 1rem !important;
 }
+.stackDetail{
+ padding: 1rem !important;
+}
 .MuiCardActions-root {
   display: flex;
   justify-content: center;

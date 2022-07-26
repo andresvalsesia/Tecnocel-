@@ -200,6 +200,12 @@ label.MuiRating-label {
 .dasboard__mobile{
   display: none;
 }
+.Carousel-indicators-2  {
+  display: none;
+}
+.Carousel-indicators-15  {
+  display: none;
+}
 @media only screen and (max-width: 768px) {
   .dashboard{
     display: none!important;

@@ -206,7 +206,16 @@
     font-weight: bold;
     font-size: 1.7rem;
   }
-  
+
+  .button-cart {
+    padding: 0 !important;
+    margin: 0 !important;
+    align-items: baseline !important;
+    line-height: 0 !important;
+    width: fit-content;
+    background-color: transparent;
+    border: 0;
+  }
   
   
   @media (max-width: 1300px) {
@@ -242,12 +251,11 @@
       padding: 1rem;
     }
     .titulo-productos {
-      display: none;
+      display: none !important;
     }
     .productos {
       display: flex;
       flex-wrap: wrap;
-      gap: 3rem;
     }
     .productos h5 {
       display: none;
