@@ -162,6 +162,7 @@ label.MuiFormControlLabel-root {
   height: 3.5rem!important;
   margin-left:5px;
   margin-top: 4px;
+  color: #88d317c7
 } 
 
 label.MuiFormLabel-root.MuiInputLabel-root.MuiInputLabel-formControl.MuiInputLabel-animated {

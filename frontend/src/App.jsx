@@ -101,7 +101,7 @@ function App() {
       </Routes>
 
       <Footer />
-      <ScrollToTop  style={{ backgroundColor:'#88D317', opacity:'60%'}}
+      <ScrollToTop  style={{ backgroundColor:'#5e5e5e', opacity:'60%'}}
         smooth
         viewBox="0 0 24 24"
         component={<ArrowUpwardIcon />}
