@@ -8,9 +8,9 @@ import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import DeleteIcon from '@mui/icons-material/Delete';
 import logo from '../../Assets/Tecnocel.png';
-import userActions from '../../redux/actions/userActions';
 import Paypal from './Paypal';
 import EmptyCart from "./EmptyCart";
+import PayModal from "./PayModal"
 
 
 const Cart = () => {
@@ -24,12 +24,6 @@ const Cart = () => {
   let subtotal = carrito.map((item) => item.price * item.__v)
 
   let total = subtotal.reduce((sum, a) => sum + a, 0)
-
-
-  let user = useSelector(store => store.userReducer.user)
-
-
-
 
   const addToCart = async (id) => {
 
@@ -59,15 +53,7 @@ const Cart = () => {
 
   };
 
-  const enviarFactura = async (email) => {
-    if (window.confirm('Desea realizar la compra?')) {
-      await dispatch(userActions.enviarBoleta(email, carrito))
-      dispatch({ type: 'MESSAGE', payload: { view: true, message: "GRACIAS POR SU COMPRA, LE ENVIAMOS UN EMAIL CON EL RESUMEN", success: true } });
-    }
-    else {
-      dispatch({ type: 'MESSAGE', payload: { view: true, message: "LO ESPERAMOS PRONTO", success: false } });
-    }
-  }
+
 
 
 
@@ -80,15 +66,6 @@ const Cart = () => {
           <img src={logo} alt="logo" height={150}></img>
         </div>
       </div>
-
-      {/*  <div className="emptyCart">
-          <RemoveShoppingCartIcon />
-          <Typography>No Items In Cart</Typography>
-          <Link to="/products">View Products</Link>
-          <BottomTab />
-        </div> */}
-
-      {/* <EmptyCart/> */}
       <p className="text-envios-gratis"> Envio gratis y 12 cuotas sin interes desde $1.000</p>
       <div className="boxes">
         <div className="box-productos">
@@ -127,12 +104,7 @@ const Cart = () => {
           <h4>Resumen de compra</h4>
           <div className="total-link">
             <p>Total: ${total}</p>
-
-            <button className="button-compra"
-              onClick={() => enviarFactura(user.email, carrito)}
-            >
-              Iniciar Compra
-            </button>
+            <PayModal/>
             <Paypal sx={{ marginTop: '1rem', fontSize: 'large', width: '100%' }} />
           </div>
         </div>

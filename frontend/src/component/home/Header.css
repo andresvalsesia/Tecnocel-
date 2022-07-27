@@ -1,6 +1,12 @@
+.Header{
+  border-bottom:solid 0.1rem #88D317 !important;
+}
 .Linkrouter{
   color:white;
   font-size: 1.8rem;
+}
+.Header{
+  border-bottom:solid 0.1rem #88D317 !important;
 }
 .css-6hp17o-MuiList-root-MuiMenu-list{
     display: flex;
@@ -11,9 +17,6 @@
 }
 .css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper {
   background-color: transparent !important;
-}
-.Header{
-  border-bottom:solid 0.1rem #88D317 !important;
 }
 .menu-despleg{
   background-color: rgba(255, 255, 255, 0.253);
@@ -32,6 +35,7 @@
   .panel{
     font-size:35px!important;
     color:#88D317;
+    transform: translateX(-145px);
   }
   .inputBox {
     overflow: hidden !important;

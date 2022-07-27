@@ -41,14 +41,14 @@ function Products(props) {
     <Box className='contenedor-tarjetas'>
         
          { 
-         search=="" ? products.map((item, index) => <ProductCard key={index} props={item} />)
+         search==="" ? products.map((item, index) => <ProductCard key={index} props={item} />)
           : <>
                {filter.length>0 ? <>{ filter.map((element, index) => <ProductCard key={index} props={element} />)}</>
                : <Grid container sx={{ height: '60vh', width: '100vw' }} >
                  <Grid item xs={12} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
                 
                    <Box sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
-                   <img  src="https://cdn-icons-png.flaticon.com/512/6202/6202861.png"></img>
+                   <img  src="https://cdn-icons-png.flaticon.com/512/6202/6202861.png" alt="imagen"></img>
                     <Typography variant="h4" sx={{fontWeight: 'bold',marginTop:'1rem'}}>NO SE ENCONTRARON RESULTADOS</Typography>
                    </Box>
               
