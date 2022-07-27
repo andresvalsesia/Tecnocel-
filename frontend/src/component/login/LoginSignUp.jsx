@@ -137,7 +137,7 @@ const LoginSignup = () => {
                     style={{ fontSize: "2rem" }}
                   />
                 </div>
-                <Link to="/password/forgot">¿Has olvidado tu contraseña ?</Link>
+                {/* <Link to="/password/forgot">¿Has olvidado tu contraseña ?</Link> */}
                 <input type="submit" value="Iniciar" className="loginBtn" />
                 <GoogleSignIn />
 

@@ -38,31 +38,34 @@
     text-align: justify;
     margin: 0;
     padding: 0;
+    margin-left: 1rem;
   }
   
   .productos h5 {
     color: white;
     font-size: 16px;
     padding: 0;
-    margin-top: 0.1rem;
+    margin-top: 0.5rem;
+    margin-left: 1.7rem;
   }
   
   .button-compra {
-      background:linear-gradient(to bottom, #88d317 5%, #5cbf2a 100%);
-      background-color:#88d317;
-      border-radius:10px;
-      border:1px solid #88d317;
-      display:inline-block;
-      height: auto;
-      width: auto;
-      cursor:pointer;
-      color:#ffffff;
-      font-family:Arial;
-      font-size:19px;
-      font-weight:bold;
+      background:linear-gradient(to bottom, #88d317 5%, #5cbf2a 100%) !important;
+      background-color:#88d317 !important;
+      border-radius:10px !important;
+      border:1px solid #88d317 !important;
+      display:inline-block !important;
+      height: auto !important;
+      width: auto !important;
+      cursor:pointer !important;
+      width: 100% !important;
+      color:#ffffff !important;
+      font-family:Arial!important;
+      font-size:19px !important;
+      font-weight:bold !important;
       padding:16px 31px;
-      text-decoration:none;
-      text-shadow:0px 1px 0px #2f6627;
+      text-decoration:none !important;
+      text-shadow:0px 1px 0px #2f6627 !important;
   }
   .button-compra:hover {
       background:linear-gradient(to bottom, #5cbf2a 5%, #88d317 100%);
@@ -180,7 +183,8 @@
   }
   
   .cantidad p {
-    margin-top: 0.1rem;
+    margin-top: .5rem;
+    font-size: 2rem !important;
   }
   
   .vaciar-carrito {
@@ -204,7 +208,7 @@
     margin-top: 2rem;
     color: white;
     font-weight: bold;
-    font-size: 1.7rem;
+    font-size: 2rem !important;
   }
 
   .button-cart {
@@ -215,6 +219,10 @@
     width: fit-content;
     background-color: transparent;
     border: 0;
+  }
+
+  .MuiSvgIcon-root {
+    margin-top: 0 !important;
   }
   
   
@@ -270,5 +278,8 @@
   @media (max-width: 540px) {
     .tacho :last-child {
       justify-content: end;
+    }
+    .productos {
+      height: 25rem;
     }
   }
