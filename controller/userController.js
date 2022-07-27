@@ -171,7 +171,16 @@ const userController = {
          res.json({ success: false, message: 'Email has not been confirmed yet!' })
       }
    },
-
+   signOutUser: async (req, res) => {
+      console.log('signOut')
+      console.log(req.body)
+      const email = req.body.mail
+      const user = await User.findOne({email})
+      await user.save()
+      res.json({
+          success: true,
+          message: email+' sign out!'})
+  },
    verificarToken: async (req, res) => {
 
       if (req.user) {
