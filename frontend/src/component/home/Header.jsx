@@ -14,6 +14,12 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
+import userActions from '../../redux/actions/userActions';
+import {useDispatch} from 'react-redux'
+import {useNavigate} from "react-router-dom"
+import Typography from '@mui/material/Typography';
+import PersonIcon from '@mui/icons-material/Person'
+import Avatar from '@mui/material/Avatar';
 
 let pages=[
   {name:"Inicio",
@@ -31,6 +37,8 @@ const Header = () => {
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const [reload, setReload] = React.useState(false)
+
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -38,6 +46,22 @@ const Header = () => {
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
   };
+
+  let userOptions = [
+    {to: '/login', name: 'Iniciar sesión'},
+    {to: '/login', name: 'Registrarse'}
+  ]
+  const navigate = useNavigate ()
+  const dispatch = useDispatch ()
+
+
+  const logOutSession= () => {
+    dispatch(userActions.signOutUser())
+    navigate()
+    setReload(!reload)
+  }
+
+
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
@@ -47,9 +71,18 @@ const Header = () => {
     setAnchorElUser(null);
   }
 
+  function signOutClick() {
+    dispatch(userActions.signOutUser())
+    setReload(!reload)
+  }
+
   let user = useSelector(store => store.userReducer.user)
 
   const switcherTab = useRef(null);
+
+  const handleReload = () => {
+    setReload(!reload);
+  };
 
   // window.addEventListener("scroll", () => {
   //   if (window.pageYOffset > 100) {
@@ -108,7 +141,7 @@ const Header = () => {
                 fontFamily: "Poppins,sans-serif"
               }}
             >
-              💻¡BIENVENIDOS A TECNOCEL!💻
+              ¡BIENVENIDOS A TECNOCEL 💻!
             </span>
           </div>
         </div>
@@ -283,7 +316,80 @@ const Header = () => {
              
             </div>
           </div>
-          <div className="user__account flex pointer">
+          <Box sx={{ flexGrow: 0 }}>
+          </Box><Box sx={{ flexGrow: 0 }}>
+            <Tooltip title="Open settings">
+            <IconButton onClick={handleOpenUserMenu} sx={{p: 0}}>
+                {user ? <Avatar alt="photo" src={user.user?.photo} sx={{
+                  width: '40px',
+                  height: '40px',
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  color: 'rgb(105,24,152)',
+                  backgroundColor: '#121212',
+                  marginLeft: '15px',
+                  textDecoration: 'none',
+                  borderRadius: '20px'}} /> :
+                  <LinkRouter to="/login">
+                  <svg 
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="25"
+                    height="25"
+                    marginleft="1px"
+                    fill="rgb(105,24,152)"
+                    className="userr"
+                    viewBox="0 0 16 16"
+                   >
+                    <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
+                  </svg>
+                </LinkRouter>}
+              </IconButton>
+            </Tooltip>
+            <Menu
+              sx={{ mt: '45px' }}
+              id="menu-appbar"
+              anchorEl={anchorElUser}
+              anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              open={Boolean(anchorElUser)}
+              onClose={handleCloseUserMenu}
+            >
+              {user ? (
+                <Box>
+                  <LinkRouter to={`/profile/${user.user?.id}`}>
+                 {/*    <MenuItem sx={{'&:hover': {bgcolor: 'rgb(224,224,224)'}}} onClick={handleCloseUserMenu}>
+                      <Typography sx={{padding: '2px', paddingLeft: '6px', paddingRight: '6px', color: 'rgb(2,0,3)'}}>{user.user?.name.charAt(0).toUpperCase()+user.user?.name.slice(1).toLowerCase()}</Typography>
+                    </MenuItem> */}
+                  </LinkRouter>
+                  <MenuItem sx={{'&:hover': {bgcolor: '#141414c7'}}} handleReload={handleReload} onClick={handleCloseUserMenu}>
+                    <Typography sx={{padding: '2px', paddingLeft: '6px', paddingRight: '6px', color: '#88d317c7'}} handleReload={handleReload} onClick={logOutSession}>Sign Out</Typography>
+                  </MenuItem>
+                </Box>
+              ) : 
+                <LinkRouter to="/login">
+   {/*       <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="25"
+                height="25"
+                fill="#535353"
+                className="bi bi-person pxz__20 black"
+                viewBox="0 0 16 16"
+               >
+                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
+              </svg> */}
+                </LinkRouter>
+}
+            </Menu>
+          </Box>
+{/*           <div className="user__account flex pointer">
             <LinkRouter to="/login">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -292,17 +398,17 @@ const Header = () => {
                 fill="#535353"
                 className="bi bi-person pxz__20 black"
                 viewBox="0 0 16 16"
-              >
+               >
                 <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
               </svg>
             </LinkRouter>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
     
 
   );
-};
+}
 
 export default Header;
