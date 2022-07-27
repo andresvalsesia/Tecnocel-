@@ -6,7 +6,7 @@ const productController = require('../controller/productController');
 const passport =require('../config/passport');
 
 
-const { signUpUsers, signInUsers, verifyMail, verificarToken, traerUsuarios,enviarFactura } = userController;
+const { signUpUsers, signInUsers,signOutUser, verifyMail, verificarToken, traerUsuarios,enviarFactura } = userController;
 const { createProduct, getAllproducts, getOneproduct, deleteProduct, modifyProduct } = productController;
 
 Router.route("/alluser")
@@ -18,6 +18,9 @@ Router.route('/auth/register')
 
 Router.route('/auth/login') 
     .post(signInUsers)
+
+Router.route('/auth/signOut') 
+    .post(signOutUser)
 
 Router.route('/verify/:string')
     .get(verifyMail)
