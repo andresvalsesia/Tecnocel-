@@ -105,9 +105,10 @@ const Header = () => {
                 color: "black",
                 fontWeight: "bold",
                 fontSize: "30px",
+                fontFamily: "Poppins,sans-serif"
               }}
             >
-              ¡BIENVENIDOS A TECNOCEL 💻!
+              💻¡BIENVENIDOS A TECNOCEL!💻
             </span>
           </div>
         </div>

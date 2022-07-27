@@ -40,10 +40,9 @@ const Home = () => {
                   
                 }}>
                   <h2 style={{
-                    fontFamily: "roboto",
-                    fontSize: "3em",
-                    fontWeight: "500",
-                    color: "#fff"
+                      fontSize: "3em",
+                      fontFamily: "Poppins,sans-serif",
+                      color: "#fff",
                   }}>Lo último en equipos</h2>
                 </div>
                 <div>
