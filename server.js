@@ -31,3 +31,5 @@ app.use('/api',Router)
 app.listen(PORT, (req, res) => {
     console.log("listening on port:" + app.get("port"));
 })
+
+module.exports = app
