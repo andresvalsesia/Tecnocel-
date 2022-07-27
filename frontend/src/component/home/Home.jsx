@@ -2,19 +2,17 @@ import React, { useEffect } from "react";
 import "./Home.css";
 import Carousel from "react-material-ui-carousel";
 /* import ProductCard from "../Products/productCard"; */
-import { useDispatch, useSelector } from "react-redux"
-import Header from "./Header";
 import MetaData from "../../component/more/Metadata";
 import bg from "../../Assets/background.jpg";
 import bg2 from "../../Assets/background2.jpg";
-import Loading from "../more/Loader";
+
 import { Link } from "react-router-dom";
 
 
 
 const Home = () => {
   
-  const dispatch = useDispatch();
+
 
   useEffect(() => {
     

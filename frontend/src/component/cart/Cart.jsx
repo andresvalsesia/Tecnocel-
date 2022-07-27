@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import './Cart.css';
 import { useSelector, useDispatch } from "react-redux";
 import productActions from '../../redux/actions/productActions';
-import { Typography, Button } from "@material-ui/core";
-import RemoveShoppingCartIcon from "@material-ui/icons/RemoveShoppingCart";
+
 import { Link } from "react-router-dom";
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
@@ -17,7 +16,7 @@ import EmptyCart from "./EmptyCart";
 const Cart = () => {
 
 
-  const [reload, setReload] = useState(false);
+  // const [reload, setReload] = useState(false);
   const dispatch = useDispatch();
 
   let carrito = useSelector(store => store.productReducer.carrito)
@@ -61,7 +60,7 @@ const Cart = () => {
   };
 
   const enviarFactura = async (email) => {
-    if (window.confirm('Desea relizar la compra?')) {
+    if (window.confirm('Desea realizar la compra?')) {
       await dispatch(userActions.enviarBoleta(email, carrito))
       dispatch({ type: 'MESSAGE', payload: { view: true, message: "GRACIAS POR SU COMPRA, LE ENVIAMOS UN EMAIL CON EL RESUMEN", success: true } });
     }

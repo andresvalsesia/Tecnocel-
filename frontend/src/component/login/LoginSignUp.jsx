@@ -1,4 +1,4 @@
-import { React, useEffect, useRef, useState } from "react";
+import { React, useRef, useState } from "react";
 
 import Box from '@mui/material/Box';
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
@@ -7,19 +7,18 @@ import FaceIcon from "@material-ui/icons/Face";
 import { Link } from "react-router-dom";
 import userActions from '../../redux/actions/userActions';
 import "./LoginSignUp.css";
-import { useDispatch, useSelector } from "react-redux";
-import Loader from "../more/Loader";
+import { useDispatch } from "react-redux";
+
 import MetaData from "../more/Metadata";
-import { ToastContainer, toast } from "react-toastify";
+
 import "react-toastify/dist/ReactToastify.css";
 /* import GoogleSignUp from '../login/GoogleSignUp' */
 import GoogleSignIn from '../login/GoogleSignIn'
 
 const LoginSignup = () => {
 
-  const dispatch=useDispatch();
-  const [loginEmail, setLoginEmail] = useState("");
-  const [loginPassword, setLoginPassword] = useState("");
+  const dispatch = useDispatch();
+
 
   const [user, setUser] = useState({
     name: "",
@@ -33,35 +32,35 @@ const LoginSignup = () => {
   const registerTab = useRef(null);
   const switcherTab = useRef(null);
 
-  const [avatar, setAvatar] = useState("/profile.png");
+  const [setAvatar] = useState("/profile.png");
   const [avatarPreview, setAvatarPreview] = useState("/profile.png");
 
   const loginSubmit = (e) => {
     e.preventDefault();
 
-    const logedUser={
-      
-      email:e.target[0].value,
-      password:e.target[1].value,
-      from:'signup'
+    const logedUser = {
+
+      email: e.target[0].value,
+      password: e.target[1].value,
+      from: 'signup'
     }
-    
-      dispatch(userActions.signInUser(logedUser))
+
+    dispatch(userActions.signInUser(logedUser))
   };
 
   const registerSubmit = (e) => {
     e.preventDefault();
-    
-    const userData={
-      name:e.target[0].value,
-      email:e.target[1].value,
-      password:e.target[2].value,
-      from:'signup'
+
+    const userData = {
+      name: e.target[0].value,
+      email: e.target[1].value,
+      password: e.target[2].value,
+      from: 'signup'
     }
-   
+
     dispatch(userActions.signUpUserMessage(userData))
-    
-   
+
+
   };
 
   const registerDataChange = (e) => {
@@ -103,12 +102,12 @@ const LoginSignup = () => {
   };
   return (
     <>
-    <Box className="background-image">
-   
-       
-       
+      <Box className="background-image">
+
+
+
         <>
-        
+
           <MetaData title="Login or Signup" />
           <div className="LoginSignUpContainer">
             <div className="LoginSignUpBox">
@@ -126,7 +125,7 @@ const LoginSignup = () => {
                     type="email"
                     placeholder="Email"
                     required
-                    style={{fontSize: "2rem"}}
+                    style={{ fontSize: "2rem" }}
                   />
                 </div>
                 <div className="loginPassword">
@@ -135,13 +134,13 @@ const LoginSignup = () => {
                     type="password"
                     placeholder="Contraseña"
                     required
-                    style={{fontSize: "2rem"}}
+                    style={{ fontSize: "2rem" }}
                   />
                 </div>
-                <Link  to="/password/forgot">¿Has olvidado tu contraseña ?</Link>
+                <Link to="/password/forgot">¿Has olvidado tu contraseña ?</Link>
                 <input type="submit" value="Iniciar" className="loginBtn" />
-                <GoogleSignIn/>
-                
+                <GoogleSignIn />
+
                 <Link to="/">
                   <span className="volver-inicio">Volver a página de Inicio</span>
                 </Link>
@@ -197,7 +196,7 @@ const LoginSignup = () => {
                   />
                 </div>
                 <input type="submit" value="Registrarse" className="signUpBtn" />
-                 
+
                 <Link to="/">
                   <span className="volver-inicio">Volver a pagina de Inicio</span>
                 </Link>
@@ -216,9 +215,9 @@ const LoginSignup = () => {
             draggable
             pauseOnHover
           /> */}
-          
+
         </>
-      
+
       </Box>
     </>
   );

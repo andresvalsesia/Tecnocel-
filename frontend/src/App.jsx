@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { ToastContainer, toast } from 'react-toastify';
 import userActions from './redux/actions/userActions';
-import productActions from './redux/actions/productActions';
+
 import LoginSignUp from '../src/component/login/LoginSignUp';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import EditarProduct from './component/admin/EditarProduct';
@@ -26,30 +26,32 @@ function App() {
 
   const dispatch = useDispatch();
   let carrito = useSelector(store => store.productReducer.carrito)
-   
-  useEffect(() => {
- 
-     localStorage.setItem('carrito', JSON.stringify(carrito))
 
-   
+  useEffect(() => {
+
+    localStorage.setItem('carrito', JSON.stringify(carrito))
+
+
 
   }, [carrito]);
 
-  useEffect(()=>{
+  useEffect(() => {
 
-    if (localStorage.getItem('token') !== null)  {
+    if (localStorage.getItem('token') !== null) {
       const token = localStorage.getItem('token');
       dispatch(userActions.verificarToken(token))
+      
     }
 
+// eslint-disable-next-line
   },[])
 
-  
+
 
 
   let user = useSelector(store => store.userReducer.user)
   console.log(user)
- 
+
   let message = useSelector(store => store.userReducer.snackbar)
 
   if (message.view) {
@@ -86,11 +88,11 @@ function App() {
 
   return (
     <>
-      <Header /> 
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        {user && user.role=="admin" &&  <Route path="/admin" element={<Admin/>}/>}
-        <Route path="/cart" element={<Cart props={carrito}/>}/>
+        {user && user.role == "admin" && <Route path="/admin" element={<Admin />} />}
+        <Route path="/cart" element={<Cart props={carrito} />} />
         <Route path="/login" element={<LoginSignUp />} />
         <Route path="/about" element={<About />} />
         <Route path="/product/:id" element={<EditarProduct />} />
@@ -101,7 +103,7 @@ function App() {
       </Routes>
 
       <Footer />
-      <ScrollToTop  style={{ backgroundColor:'#5e5e5e', opacity:'60%'}}
+      <ScrollToTop style={{ backgroundColor: '#5e5e5e', opacity: '60%' }}
         smooth
         viewBox="0 0 24 24"
         component={<ArrowUpwardIcon />}
