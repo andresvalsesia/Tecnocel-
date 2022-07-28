@@ -22,7 +22,15 @@
       margin: 0.5rem;
       border-radius: 0.1rem;
       border-top-color: #272727;
+      color: white !important;
+      font-size: 18px;
     }
+    
+    .search::placeholder {
+      color: white;
+      font-size: 18px;
+    }
+
     .notNesultsContenedor{
       color: whitesmoke;
       display: flex;
