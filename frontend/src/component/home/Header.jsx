@@ -290,23 +290,20 @@ const Header = () => {
 
         <div className="rightOption flex align__items__center">
 
-        {user ?
-          <IconButton onClick={()=>/* likesOrDislikes */(user._id)} aria-label="add to favorites">
-            {/* {user?.likes.includes(user.user?.id) ? */}
-             {/*  <FavoriteIcon style={{ color: 'red' }} /> */}
+        {/* {user ?
+          <IconButton onClick={()=> likesOrDislikes (user._id)} aria-label="add to favorites">
+             {user?.likes.includes(user.user?.id) ? 
+              <FavoriteIcon style={{ color: 'red' }} /> 
               :
               <FavoriteBorderIcon />}
             
           </IconButton>
           :
-          <IconButton /* onClick={noUser} */ aria-label="add to favorites">
+          <IconButton onClick={noUser}  aria-label="add to favorites">
             <FavoriteBorderIcon />
             
           </IconButton>
-        }
-
-
-
+        } */}
 
           
           {user && user.role=="admin" &&  <LinkRouter  to="/admin">
