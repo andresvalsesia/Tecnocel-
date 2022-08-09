@@ -93,7 +93,6 @@
   .contenedor {
     background-image: url(https://besthqwallpapers.com/Uploads/20-8-2019/102143/thumb2-black-stylish-background-green-neon-lines-green-light-effects-abstract-black-background.jpg);
     padding: 0 15rem;
-    height: 100vh;
     width:100%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -173,6 +172,7 @@
     padding: 5rem;
     max-width: 1152px;
     background-color: #101010;
+    margin-bottom: 60px;
   }
   
   .cantidad {
