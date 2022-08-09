@@ -9,6 +9,7 @@ span,
 .background-image {
   max-width: 100%;
   display: flex;
+  min-height: 85vh;
   justify-content: flex-end;
   background-color: black;
   background-image: url(https://www.nvidia.com/content/dam/en-zz/Solutions/geforce/laptops/20-series/geforce-rtx-laptops-social-1200x628-fb-ig-website-link.jpg);
@@ -20,15 +21,14 @@ span,
 
 .LoginSignUpContainer {
   width: 100vw;
-  height: 100vh;
+  height: 500px;
   max-width: 40%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   background-color: transparent;
-  /* background-image: url(https://www.wallpaperuse.com/wallp/8-83446_m.jpg); */
-  top: 0%;
-  left: 0;
+  
+
 }
 
 
@@ -37,13 +37,11 @@ span,
   padding: 10px;
   margin-right: 20%;
   width: 25vw;
-  height: 70vh;
+  height: 400px;
   overflow: hidden;
-  -moz-box-shadow: 0 0 6px #88D317;
-  -webkit-box-shadow: 0 0 6px #88D317;
   box-shadow: 0 0 30px #88D317;
   border-radius: 15px;
-  background-color: rgba(0, 0, 0, 0.745);
+  background-color: rgba(0, 0, 0, 0.945);
 
 }
 
@@ -100,8 +98,9 @@ span,
 
 .loginForm>div>input,
 .signUpForm>div>input {
-  padding: 1vmax 4vmax;
+  padding: 6px;
   padding-right: 1vmax;
+  margin-bottom: 15px;
   width: 100%;
   box-sizing: border-box;
   border: 1px solid rgba(0, 0, 0, 0.267);
@@ -110,14 +109,11 @@ span,
   outline: none;
   color: black
 }
-
-.loginForm>div>svg,
-.signUpForm>div>svg {
-  position: absolute;
-  transform: translateX(1vmax);
-  font-size: 1.6vmax;
-  color: rgba(0, 0, 0, 0.623);
+svg, .MuiSvgIcon-root {
+  margin-bottom: 14px;
 }
+
+
 
 .loginForm>a {
   color: rgba(0, 0, 0, 0.651);
@@ -132,7 +128,7 @@ span,
 }
 
 #registerImage>img {
-  width: 3vmax;
+  width: 40px;
   border-radius: 100%;
 }
 
@@ -179,6 +175,8 @@ span,
 .loginBtn:hover,
 .signUpBtn:hover {
   background-color: rgb(104, 169, 6);
+  color: black;
+  font-size: 2.5rem;
 }
 
 .shiftToLeft {
@@ -225,10 +223,14 @@ span,
     padding: 2.5vmax 5vmax;
     font: 300 1.7vmax cursive;
   }
-
+.signUpName {
+  display: flex;
+  align-items: center;
+}
   .loginForm>div>svg,
   .signUpForm>div>svg {
     font-size: 2.8vmax;
+    margin-right: 14px;
   }
 
   .loginForm>a {
