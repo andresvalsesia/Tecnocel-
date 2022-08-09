@@ -5,7 +5,7 @@ import Carousel from "react-material-ui-carousel";
 import MetaData from "../../component/more/Metadata";
 import bg from "../../Assets/background.jpg";
 import bg2 from "../../Assets/background2.jpg";
-
+import "./Home.css"
 import { Link } from "react-router-dom";
 
 
@@ -61,20 +61,7 @@ const Home = () => {
                 </div>
                 <div>
                   <Link to="/products">
-                    <button type="submit" style={{
-                      width: "135px",
-                      height: "50px",
-                      border: "none",
-                      background: "#88d317",
-                      margin: "10px 0",
-                      fontSize: "1.2vmax",
-                      color: "black",
-                      cursor: "pointer",
-                      textAlign: "center",
-                      display: "initial"
-                    }}
-                      
-                    ><span className="Home__button">Ver más!</span></button>
+                    <button type="submit">Ver más!</button>
                   </Link>
                 </div>
               </div>

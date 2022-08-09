@@ -129,10 +129,26 @@
     text-decoration: none;
     
   } */
-.Home__button { 
-    cursor: pointer;
+button { 
+  background-color: greenyellow;
+    
     color: black;
     font-size: 20px;
+    width: 120px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    border: solid greenyellow;
+  }
+  button:hover {
+    background-color: black ;
+    color: greenyellow;
+    width: 130px;
+    height: 45px;
+    font-size: 22px;
+    box-shadow: 0 0 6px #88D317;
   }
   /* .homeHeading {
     text-align: center;
