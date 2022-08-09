@@ -73,8 +73,8 @@ const Home = () => {
                       textAlign: "center",
                       display: "initial"
                     }}
-                      className="Home__button"
-                    >Ver más!</button>
+                      
+                    ><span className="Home__button">Ver más!</span></button>
                   </Link>
                 </div>
               </div>
