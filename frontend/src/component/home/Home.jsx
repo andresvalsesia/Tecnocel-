@@ -61,7 +61,7 @@ const Home = () => {
                 </div>
                 <div>
                   <Link to="/products">
-                    <button type="submit">Ver más!</button>
+                    <button className='vermas' type="submit">Ver más!</button>
                   </Link>
                 </div>
               </div>

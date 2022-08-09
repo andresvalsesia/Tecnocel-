@@ -129,7 +129,7 @@
     text-decoration: none;
     
   } */
-button { 
+  .vermas { 
   background-color: greenyellow;
     
     color: black;
@@ -142,7 +142,7 @@ button {
     border-radius: 5px;
     border: solid greenyellow;
   }
-  button:hover {
+  .vermas:hover {
     background-color: black ;
     color: greenyellow;
     width: 130px;
