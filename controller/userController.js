@@ -1,9 +1,9 @@
 const User = require('../model/user');
 const bcryptjs = require('bcryptjs');
 var crypto = require('crypto');
-const sendEmail=require('./sendMail');
-const sendFactura=require('./sendFactura');
-const jwt=require('jsonwebtoken');
+const sendEmail = require('./sendMail');
+const sendFactura = require('./sendFactura');
+const jwt = require('jsonwebtoken');
 
 const userController = {
 
@@ -21,7 +21,7 @@ const userController = {
          if (user) {
 
             if (user.from.indexOf(from) !== -1) {
-               res.json({ success: false, from: 'signup', message: 'You have already registered please log in' })
+               res.json({ success: false, from: 'signup', message: 'YA ESTAS REGISTRADO POR FAVOR INGRESA' })
             }
             else {
                const passwordHash = bcryptjs.hashSync(password, 10)
@@ -48,19 +48,19 @@ const userController = {
             if (from !== 'signup') {
                newUser.verification = true;
                await newUser.save()
-               res.json({ success: true, from: 'signup', message: `Congratulations you have created your user with  ${from}` })
+               res.json({ success: true, from: 'signup', message: `FELICITACIONES. HAS CREADO TU CUENTA CON ${from}` })
             }
             else {
                await newUser.save()
                await sendEmail(email, uniqueString)
-               res.json({ success: true, from: 'signup', message: 'We have sent you an email to validate it, please check your email box' })
+               res.json({ success: true, from: 'signup', message: 'SE ENVIÓ UN EMAIL DE VERIFICACIÓN A TU CASILLA DE CORREO, PORFAVOR VERIFICA PARA PODER INGRESAR' })
             }
          }
       }
 
       catch (err) {
          console.log(err)
-         res.json({ success: false, message: 'Something went wrong try again in a few minutes' })
+         res.json({ success: false, message: 'ALGO SALIO MAL, PORFAVOR INTENTALO EN UNOS MINUTOS' })
       }
 
    },
@@ -75,7 +75,7 @@ const userController = {
          /* const indexPass= user.from.indexOf(from) */
 
          if (!user) {
-            res.json({ success: false, from: 'no from', message: `${email} has no account, please SIGN UP!` })
+            res.json({ success: false, from: 'no from', message: `${email} NO TIENES UNA CUENTA, REGISTRATE` })
          }
          else {
             if (from !== "form-signup") {
@@ -97,12 +97,12 @@ const userController = {
                      success: true,
                      from: from,
                      response: { token, userData },
-                     message: `Welcome again ${userData.name} `
+                     message: `BIENVENIDO NUEVAMENTE ${userData.name} `
                   })
 
                }
                else {
-                  res.json({ success: false, from: from, message: `The password or email made with your ${from} register is incorrect` })
+                  res.json({ success: false, from: from, message: `LA CONTRASEÑA O EL EMAIL SON INCORRECTOS` })
                }
             }
             else {
@@ -127,7 +127,7 @@ const userController = {
                         success: true,
                         from: from,
                         response: { token, userData },
-                        message: `Welcome again ${userData.name}`
+                        message: `BIENVENIDO DE VUELTA ${userData.name}`
                      })
 
                   }
@@ -135,7 +135,7 @@ const userController = {
                      res.json({
                         success: false,
                         from: from,
-                        message: 'Password or username incorrect'
+                        message: 'EMAIL O CONTRASEÑA INCORRECTA'
                      })
                   }
 
@@ -145,7 +145,7 @@ const userController = {
                   res.json({
                      success: false,
                      from: from,
-                     message: "We send you a verification email to your mailbox, please verify it to be able to enter"
+                     message: "SE ENVIÓ UN EMAIL DE VERIFICACIÓN A TU CASILLA DE CORREO, PORFAVOR VERIFICA PARA PODER INGRESAR"
                   })
 
                }
@@ -155,7 +155,7 @@ const userController = {
 
 
       }
-      catch (err) { res.json({ success: false, message: 'Something went wrong try again in a few minutes' }) }
+      catch (err) { res.json({ success: false, message: 'ALGO SALIO MAL, PORFAVOR INTENTALO EN UNOS MINUTOS' }) }
    },
 
    verifyMail: async (req, res) => {
@@ -168,19 +168,20 @@ const userController = {
          res.redirect(`http://localhost:3000/`)
       }
       else {
-         res.json({ success: false, message: 'Email has not been confirmed yet!' })
+         res.json({ success: false, message: 'EL EMAIL NO HA SIDO VERIFICADO!' })
       }
    },
    signOutUser: async (req, res) => {
       console.log('signOut')
       console.log(req.body)
       const email = req.body.mail
-      const user = await User.findOne({email})
+      const user = await User.findOne({ email })
       await user.save()
       res.json({
-          success: true,
-          message: email+' sign out!'})
-  },
+         success: true,
+         message: email + ' sign out!'
+      })
+   },
    verificarToken: async (req, res) => {
 
       if (req.user) {
@@ -192,12 +193,12 @@ const userController = {
             role: req.role,
             from: req.user.from
          }
-         res.json({ success: true, message: `Welcome again ${req.user.name}`, from: 'Token', response: { userData } })
+         res.json({ success: true, message: `BIENVENIDO NUEVAMENTE ${req.user.name}`, from: 'Token', response: { userData } })
 
       }
 
       else {
-         res.json({ success: false, message: 'Please make your signIn again' })
+         res.json({ success: false, message: 'PORFAVOR INGRESA NUEVAMENTE' })
       }
    },
 
@@ -215,25 +216,25 @@ const userController = {
          error: error
       })
    },
-         
-               enviarFactura: async (req,res)=>{
-               let email=req.params.email
-               let {carrito}=req.body
-               console.log(carrito)
-               let error=null;
-               try{
-                   sendFactura(email,carrito)
-               }
-               catch(err){error=err}
 
-               res.json({
-                  response:error? 'error': "Su resumen fue envidado con exito",
-                  success:error?false :true,
-                  error:error
-                 })
+   enviarFactura: async (req, res) => {
+      let email = req.params.email
+      let { carrito } = req.body
+      console.log(carrito)
+      let error = null;
+      try {
+         sendFactura(email, carrito)
+      }
+      catch (err) { error = err }
 
-           }
-           
+      res.json({
+         response: error ? 'error' : "Su resumen fue envidado con exito",
+         success: error ? false : true,
+         error: error
+      })
+
+   }
+
 }
 
 module.exports = userController;

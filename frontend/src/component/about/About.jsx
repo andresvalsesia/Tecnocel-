@@ -32,6 +32,7 @@ const About = () => {
                       fontWeight: "700",
                       lineHeight: "1.2",
                       color: "rgb(136,211,23)",
+                      fontFamily: "Poppins,sans-serif"
                     }}
                   >
                     Bienvenidos a TecnoCel
