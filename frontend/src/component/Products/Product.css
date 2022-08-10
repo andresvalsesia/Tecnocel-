@@ -78,6 +78,8 @@
   }
   .vermas:hover{
     background-color: #272727 !important;
+    font-size: 14px;
+    border: solid 1px greenyellow;
   }
   .vermas{
     min-width: 10rem !important;
