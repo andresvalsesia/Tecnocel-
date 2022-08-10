@@ -53,15 +53,15 @@ const Home = () => {
                 <div>
                   <h2 style={{
                     fontSize: "4.5em",
-                    fontWeight: "400",
+                    // fontWeight: "400",
                     fontFamily: "Poppins,sans-serif",
                     color: "#fff",
-                    lineHeight: ".7"
-                  }}>Sin interes</h2>
+                    lineHeight: "1.7"
+                  }}>Sin interés</h2>
                 </div>
                 <div>
                   <Link to="/products">
-                    <button className='vermas' type="submit">Ver más!</button>
+                    <button className='vermas' type="submit">! Ver más !</button>
                   </Link>
                 </div>
               </div>
