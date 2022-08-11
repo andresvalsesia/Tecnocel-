@@ -382,8 +382,8 @@ const Header = () => {
                       <Typography sx={{padding: '2px', paddingLeft: '6px', paddingRight: '6px', color: 'rgb(2,0,3)'}}>{user.user?.name.charAt(0).toUpperCase()+user.user?.name.slice(1).toLowerCase()}</Typography>
                     </MenuItem> */}
                   </LinkRouter>
-                  <MenuItem sx={{'&:hover': {bgcolor: '#141414c7'}}} handleReload={handleReload} onClick={handleCloseUserMenu}>
-                    <Typography sx={{padding: '2px', paddingLeft: '6px', paddingRight: '6px', color: '#88d317c7'}} handleReload={handleReload} onClick={logOutSession}>Sign Out</Typography>
+                  <MenuItem  sx={{'&:hover': {bgcolor: '#141414c7'}}} handleReload={handleReload} onClick={handleCloseUserMenu}>
+                    <Typography sx={{padding: '2px', paddingLeft: '6px', paddingRight: '6px', color: '#88d317c7', }} handleReload={handleReload} onClick={logOutSession}>Sign Out</Typography>
                   </MenuItem>
                 </Box>
               ) : 

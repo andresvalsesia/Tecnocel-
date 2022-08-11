@@ -5,6 +5,8 @@ import Carousel from "react-material-ui-carousel";
 import MetaData from "../../component/more/Metadata";
 import bg from "../../Assets/background.jpg";
 import bg2 from "../../Assets/background2.jpg";
+import bg3 from "../../Assets/background3.jpg";
+import bg4 from "../../Assets/background4.jpg";
 import "./Home.css"
 import { Link } from "react-router-dom";
 
@@ -27,8 +29,10 @@ const Home = () => {
             {/* Carousel */}
             <div className="banner">
               <Carousel>
-                <img src={bg} className="bgImg" alt='' />
+                <img src={bg3} className="bgImg" alt='' />
                 <img src={bg2} className="bgImg" alt='' />
+                <img src={bg4} className="bgImg" alt='' />
+                <img src={bg} className="bgImg" alt='' />
               </Carousel>
               <div className="home__content">
                 <div style={{
@@ -61,7 +65,7 @@ const Home = () => {
                 </div>
                 <div>
                   <Link to="/products">
-                    <button className='vermas' type="submit">! Ver más !</button>
+                    <button className='button-85' type="submit">¡ Ver más !</button>
                   </Link>
                 </div>
               </div>

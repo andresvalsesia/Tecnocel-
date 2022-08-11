@@ -67,6 +67,15 @@ export default function ProductDetails() {
                 <AddShoppingCartIcon sx={{ color: '#88D317', fontSize: 'xx-large' }}>
                 </AddShoppingCartIcon> 
                </Button>
+               <LinkRouter to={`/products`}>
+                  <Button
+                    className="vermas"
+                    variant="contained"
+                    
+                  >
+                    Volver  
+                  </Button>
+                </LinkRouter>
                </Stack>
                </div>
               </CardActions>

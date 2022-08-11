@@ -6,8 +6,9 @@
       height: 100% !important;
       min-height: 85vh !important;
       background-color: #0d0d0d !important;
-     background-image: url(https://wallpapercave.com/wp/wp4568512.jpg);
+     background-image: url(../../../src/Assets/background-products.jpg);
       background-size:contain;
+      background-blend-mode: color-dodge;
       padding: 2rem;
     }
     .searchConteiner{
@@ -20,10 +21,14 @@
     }
     .search{
       margin: 0.5rem;
-      border-radius: 0.1rem;
+      border-radius: 10px;
       border-top-color: #272727;
       color: white !important;
       font-size: 18px;
+      text-align: center;
+      border: none !important;
+      background-color: rgba(128, 128, 128, 0.374);
+      margin-right: 15px;
     }
     
     .search::placeholder {
@@ -52,17 +57,17 @@
     justify-content: space-around;
     flex-wrap: wrap;
     align-items: center;
-    gap: 4rem;
+    gap: 9px;
   }
   .MuiCard-root{
-    background-color: #1A0315 !important;
-    height: 70vh !important;
-    min-height: 65vh !important;
+    background-color:black !important;
+    /* height: 70vh !important;
+    min-height: 65vh !important; */
     width: 100% !important;
     padding: 1rem !important;
   -moz-box-shadow: 0 0 6px   #88D317 !important;
   -webkit-box-shadow: 0 0 6px   #88D317 !important;
-  box-shadow: 0 0 30px #88D317 !important;
+  box-shadow: 0 0 10px #88D317 !important;
   margin-left:1rem;
   margin-right:1rem;
   margin-top:1rem;
@@ -76,13 +81,29 @@
     object-fit:contain !important;
     background-color: white;
   }
+  /* .vermas-carrito{
+    display: flex;
+    flex-direction: row-reverse !important;
+    justify-content: space-around;
+  } */
   .vermas:hover{
     background-color: #272727 !important;
     font-size: 14px;
     border: solid 1px greenyellow;
+    color: white !important;
+    width: 100px;
   }
   .vermas{
-    min-width: 10rem !important;
+    width: 100px;
+    color: black !important;
+    background-color: greenyellow !important;
+    font-size: 12px !important;
+    margin: 5px !important;
+    padding: 5px !important;
+  }
+  .carrito-product {
+    display: flex;
+    align-items: baseline !important;
   }
 .MuiCardContent-root{
   height: 13rem !important;
@@ -90,6 +111,7 @@
 .carrito{
   min-height: 4rem !important;
 }
+
 
 @media screen and (max-width:455px) {
   .vermas{
